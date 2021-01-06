@@ -1,5 +1,7 @@
-const theme = {
-  colors: {},
+export const darkTheme = {
+  body: '#151514',
 };
 
-export default theme;
+export const lightTheme = {
+  body: '#FBFBFB',
+};
