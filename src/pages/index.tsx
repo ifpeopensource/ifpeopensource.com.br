@@ -1,15 +1,20 @@
 import Head from 'next/head';
+import { DefaultTheme } from 'styled-components';
 
-const Home: React.FC = () => (
+import Home from './Home';
+
+interface IndexProps {
+  setTheme(theme: DefaultTheme): void;
+}
+
+const Index: React.FC<IndexProps> = ({ setTheme }) => (
   <div>
     <Head>
       <title>IFPE Open Source</title>
     </Head>
 
-    <main>
-      <h1>IFPE Open Source</h1>
-    </main>
+    <Home setTheme={setTheme} />
   </div>
 );
 
-export default Home;
+export default Index;
