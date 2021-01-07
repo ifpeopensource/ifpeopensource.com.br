@@ -128,10 +128,8 @@ export const Content = styled.div`
     left: 1px;
     width: 22px;
     height: 22px;
-    outline: none;
-    border: 1px solid #4d4d4d;
     border-radius: 50%;
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.text};
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -144,7 +142,6 @@ export const Content = styled.div`
 
   .react-toggle--checked .react-toggle-thumb {
     left: 27px;
-    border-color: #19ab27;
   }
 `;
 
