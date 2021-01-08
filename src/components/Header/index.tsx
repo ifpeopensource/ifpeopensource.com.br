@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react';
 import ThemeToggler from 'react-toggle';
-import Image from 'next/image';
 import { DefaultTheme, ThemeContext } from 'styled-components';
 
 import { darkTheme, lightTheme } from '../../styles/theme';
 
-import { Container, Content } from './styles';
+import { Container, Content, Logo } from './styles';
 
 interface HeaderProps {
   setTheme(theme: DefaultTheme): void;
@@ -33,14 +32,14 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
     >
       <Content>
         {actualTheme === darkTheme ? (
-          <Image
+          <Logo
             src="/assets/images/logo-light.svg"
             key={actualTheme.body}
             width={139}
             height={47}
           />
         ) : (
-          <Image
+          <Logo
             src="/assets/images/logo-dark.svg"
             key={actualTheme.body}
             width={139}

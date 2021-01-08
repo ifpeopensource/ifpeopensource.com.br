@@ -2,6 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.header};
+
+  @media (min-width: 1024px) {
+    position: absolute;
+
+    z-index: 10;
+    background: transparent !important;
+    width: 100vw;
+
+    border: none !important;
+  }
 `;
 
 export const Content = styled.div`
@@ -143,21 +153,21 @@ export const Content = styled.div`
   .react-toggle--checked .react-toggle-thumb {
     left: 27px;
   }
+
+  @media (min-width: 1024px) {
+    .react-toggle {
+      margin-left: auto;
+      margin-top: 5vh;
+    }
+  }
 `;
 
-export const ThemeToggler = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px;
-  background: ${({ theme }) => theme.detail};
-  border-radius: 50px;
-  width: 70px;
-  .themeToggler-thumb {
-    background: ${({ theme }) => theme.text};
-    width: 25px;
-    height: 25px;
+export const Logo = styled.img`
+  overflow: visible;
+  @media (min-width: 1024px) {
+    position: absolute;
+    top: 3vw !important;
 
-    border-radius: 50%;
+    zoom: 2.5;
   }
 `;

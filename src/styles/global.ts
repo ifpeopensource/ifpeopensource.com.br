@@ -6,4 +6,8 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  *, input, select, textarea, button {
+    font-family: Lato, sans-serif;
+  }
 `;
