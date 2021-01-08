@@ -1,9 +1,9 @@
 import { DefaultTheme } from 'styled-components';
 
-import Header from '../../components/Header';
-import HeroHeader from '../../components/HeroHeader';
+import Header from '../components/Header';
+import HeroHeader from '../components/HeroHeader';
 
-import { Container } from './styles';
+import { Container } from '../styles/pages/Home';
 
 interface HomeProps {
   setTheme(theme: DefaultTheme): void;
