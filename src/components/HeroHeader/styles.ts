@@ -4,6 +4,7 @@ import { darkTheme } from '../../styles/theme';
 
 export const Container = styled.div`
   width: 100vw;
+  max-width: 100%;
   height: 237px;
 
   display: flex;
@@ -14,13 +15,10 @@ export const Container = styled.div`
       : 'linear-gradient(90deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.25) 100%)')},
     url('/assets/images/IFPE-Light.jpg') no-repeat;
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
+  background-position: bottom;
 
   @media (min-width: 1024px) {
-    position: absolute;
-    top: 0;
-    z-index: 0;
-
     height: 75vh;
     max-height: 700px;
   }
@@ -38,12 +36,15 @@ export const Content = styled.div`
 
   max-width: 1088px;
 
+  @media (min-width: 768px) {
+    padding: 0 16px;
+  }
+
   @media (min-width: 1024px) {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
 
-    padding: 0 16px;
     margin-bottom: 5vh;
   }
 `;

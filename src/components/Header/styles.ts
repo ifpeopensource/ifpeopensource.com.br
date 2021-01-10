@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.header};
+  max-width: 100%;
 
   @media (min-width: 1024px) {
     position: absolute;
@@ -23,7 +24,7 @@ export const Content = styled.div`
   max-width: 1088px;
 
   @media (min-width: 768px) {
-    padding: 1rem 1rem;
+    padding: 16px 16px;
   }
 
   /**
