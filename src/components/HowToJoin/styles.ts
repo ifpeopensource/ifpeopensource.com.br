@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Button = styled.a`
   background: ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.text};
+  color: #f5f5f5;
   text-decoration: none;
   font-size: 1.3rem;
   text-align: center;
