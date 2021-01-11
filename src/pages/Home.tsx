@@ -7,6 +7,7 @@ import HeroHeader from '../components/HeroHeader';
 import SectionsContainer from '../components/SectionsContainer';
 import Projects from '../components/Projects';
 import HowToJoin from '../components/HowToJoin';
+import WhoWeAre from '../components/WhoWeAre';
 
 import { Container } from '../styles/pages/Home';
 
@@ -45,6 +46,7 @@ const Home: React.FC<HomeProps> = ({ setTheme }) => (
         ]}
       />
       <HowToJoin />
+      <WhoWeAre />
     </SectionsContainer>
   </Container>
 );
