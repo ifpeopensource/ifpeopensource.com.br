@@ -15,6 +15,6 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.text};
 
   @media (min-width: 1024px) {
-    font-size: 1.33rem;
+    font-size: 1.3rem;
   }
 `;
