@@ -10,6 +10,8 @@ import HowToJoin from '../components/HowToJoin';
 import WhoWeAre from '../components/WhoWeAre';
 import Contact from '../components/Contact';
 
+import Footer from '../components/Footer';
+
 import { Container } from '../styles/pages/Home';
 
 interface HomeProps {
@@ -50,6 +52,7 @@ const Home: React.FC<HomeProps> = ({ setTheme }) => (
       <WhoWeAre />
       <Contact />
     </SectionsContainer>
+    <Footer />
   </Container>
 );
 
