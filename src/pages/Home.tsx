@@ -8,6 +8,7 @@ import SectionsContainer from '../components/SectionsContainer';
 import Projects from '../components/Projects';
 import HowToJoin from '../components/HowToJoin';
 import WhoWeAre from '../components/WhoWeAre';
+import Contact from '../components/Contact';
 
 import { Container } from '../styles/pages/Home';
 
@@ -47,6 +48,7 @@ const Home: React.FC<HomeProps> = ({ setTheme }) => (
       />
       <HowToJoin />
       <WhoWeAre />
+      <Contact />
     </SectionsContainer>
   </Container>
 );
