@@ -16,7 +16,31 @@ const Home: React.FC<HomeProps> = ({ setTheme }) => (
     <Header setTheme={setTheme} />
     <HeroHeader />
     <SectionsContainer>
-      <Projects />
+      <Projects
+        projects={[
+          {
+            title: 'Website',
+            projectURL: 'https://github.com/ifpe-open-source/website',
+            imageURL:
+              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
+            techs: ['Next.js', 'ReactJS', 'Typescript'],
+          },
+          {
+            title: 'Website',
+            projectURL: 'https://github.com/ifpe-open-source/website',
+            imageURL:
+              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
+            techs: ['Next.js', 'ReactJS', 'Typescript'],
+          },
+          {
+            title: 'Website',
+            projectURL: 'https://github.com/ifpe-open-source/website',
+            imageURL:
+              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
+            techs: ['Next.js', 'ReactJS', 'Typescript'],
+          },
+        ]}
+      />
     </SectionsContainer>
   </Container>
 );
