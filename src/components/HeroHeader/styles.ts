@@ -15,10 +15,10 @@ export const Container = styled.div`
       : 'linear-gradient(90deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.25) 100%)')},
     url('/assets/images/IFPE-Light.jpg') no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   background-position: bottom;
 
   @media (min-width: 1024px) {
+    background-attachment: fixed;
     height: 75vh;
     max-height: 700px;
   }
