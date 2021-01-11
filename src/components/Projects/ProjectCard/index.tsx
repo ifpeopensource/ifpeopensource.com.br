@@ -20,15 +20,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   <Link href={projectURL} passHref>
     <Container type="button">
       <ProjectImage src={imageURL} />
-      <ProjectTitle>{title}</ProjectTitle>
-      <ProjectTechs>
-        {techs.map((tech) => (
-          <ProjectTech
-            techName={tech}
-            key={techs.findIndex((element) => element === tech)}
-          />
-        ))}
-      </ProjectTechs>
+      <div>
+        <ProjectTitle>{title}</ProjectTitle>
+        <ProjectTechs>
+          {techs.map((tech) => (
+            <ProjectTech
+              techName={tech}
+              key={techs.findIndex((element) => element === tech)}
+            />
+          ))}
+        </ProjectTechs>
+      </div>
     </Container>
   </Link>
 );

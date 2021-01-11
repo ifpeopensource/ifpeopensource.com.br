@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.a`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   text-decoration: none;
 
