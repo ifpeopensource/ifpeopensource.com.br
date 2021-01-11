@@ -14,6 +14,6 @@ export const lightTheme = {
   body: '#FBFBFB',
   text: '#1C1E20',
   header: '#FBFBFB',
-  detail: '#EBEBEB',
+  detail: '#DFDFDF',
   sectionAccent: '#F2F2F2',
 };
