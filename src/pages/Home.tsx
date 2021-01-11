@@ -1,9 +1,12 @@
 import { DefaultTheme } from 'styled-components';
 
 import Header from '../components/Header';
+
 import HeroHeader from '../components/HeroHeader';
-import Projects from '../components/Projects';
+
 import SectionsContainer from '../components/SectionsContainer';
+import Projects from '../components/Projects';
+import HowToJoin from '../components/HowToJoin';
 
 import { Container } from '../styles/pages/Home';
 
@@ -41,6 +44,7 @@ const Home: React.FC<HomeProps> = ({ setTheme }) => (
           },
         ]}
       />
+      <HowToJoin />
     </SectionsContainer>
   </Container>
 );
