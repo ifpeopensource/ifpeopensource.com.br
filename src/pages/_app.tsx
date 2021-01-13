@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -10,6 +11,14 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        {theme === darkTheme ? (
+          <meta name="color-scheme" content="dark" />
+        ) : (
+          <meta name="color-scheme" content="light" />
+        )}
+        <meta name="theme-color" content={theme.header} />
+      </Head>
       <Component {...pageProps} setTheme={setTheme} />
       <GlobalStyle />
     </ThemeProvider>
