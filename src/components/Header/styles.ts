@@ -1,18 +1,28 @@
-import styled from 'styled-components';
+/* eslint-disable operator-linebreak */
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.header};
   max-width: 100%;
 
-  @media (min-width: 1024px) {
-    position: absolute;
+  position: sticky;
+  top: 0;
 
-    z-index: 10;
-    background: transparent !important;
-    width: 100vw;
+  ${(props) =>
+    props.className === 'pageTop' &&
+    css`
+      @media (min-width: 1024px) {
+        position: absolute;
 
-    border: none !important;
-  }
+        background:
+
+        z-index: 10;
+        background: transparent;
+        width: 100vw;
+
+        border: none !important;
+      }
+  `};
 `;
 
 export const Content = styled.div`
@@ -155,20 +165,33 @@ export const Content = styled.div`
     left: 27px;
   }
 
-  @media (min-width: 1024px) {
-    .react-toggle {
-      margin-left: auto;
-      margin-top: 5vh;
-    }
-  }
+  ${(props) =>
+    props.className === 'pageTop' &&
+    css`
+      @media (min-width: 1024px) {
+        .react-toggle {
+          margin-left: auto;
+          margin-top: 5vh;
+        }
+      }
+    `};
 `;
 
 export const Logo = styled.img`
   overflow: visible;
-  @media (min-width: 1024px) {
-    position: absolute;
-    top: 3vw !important;
 
-    zoom: 2.5;
+  @media (min-width: 1024px) {
+    zoom: 1.2;
   }
+
+  ${(props) =>
+    props.className === 'pageTop' &&
+    css`
+      @media (min-width: 1024px) {
+        position: absolute;
+        top: 3vw !important;
+
+        zoom: 2.5;
+      }
+    `};
 `;

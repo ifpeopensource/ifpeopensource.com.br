@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react';
+/* eslint-disable object-curly-newline */
+import { useContext, useEffect, useState, RefObject } from 'react';
 import ThemeToggler from 'react-toggle';
 import { DefaultTheme, ThemeContext } from 'styled-components';
 
@@ -8,10 +9,12 @@ import { Container, Content, Logo } from './styles';
 
 interface HeaderProps {
   setTheme(theme: DefaultTheme): void;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 const Header: React.FC<HeaderProps> = ({ setTheme }) => {
   const [actualTheme, setActualTheme] = useState(useContext(ThemeContext));
+  const [pageTop, setPageTop] = useState(true);
 
   function changeTheme() {
     if (actualTheme === darkTheme) {
@@ -23,20 +26,35 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
     }
   }
 
+  function handleScroll() {
+    if (window.pageYOffset < 0.75 * window.innerHeight) {
+      setPageTop(true);
+    } else {
+      setPageTop(false);
+    }
+  }
+
+  useEffect(() => {
+    setPageTop(window.pageYOffset < 0.75 * window.innerHeight);
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Container
       style={{
         borderBottom: actualTheme === lightTheme ? '2px solid' : '0',
         borderBottomColor: actualTheme.detail,
       }}
+      className={pageTop ? 'pageTop' : ''}
     >
-      <Content>
+      <Content className={pageTop ? 'pageTop' : ''}>
         {actualTheme === darkTheme ? (
           <Logo
             src="/assets/images/logo-light.svg"
             key={actualTheme.body}
             width={139}
             height={47}
+            className={pageTop ? 'pageTop' : ''}
           />
         ) : (
           <Logo
@@ -44,6 +62,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
             key={actualTheme.body}
             width={139}
             height={47}
+            className={pageTop ? 'pageTop' : ''}
           />
         )}
         <ThemeToggler
