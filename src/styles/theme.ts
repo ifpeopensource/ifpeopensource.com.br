@@ -7,6 +7,7 @@ export const darkTheme = {
   header: '#0A0A0A',
   detail: '#20201D',
   sectionAccent: '#303030',
+  modalBackground: 'rgba(21, 21, 20, 0.5)',
 };
 
 export const lightTheme = {
@@ -18,4 +19,5 @@ export const lightTheme = {
   header: '#FBFBFB',
   detail: '#D0D0D0',
   sectionAccent: '#E6E6E6',
+  modalBackground: 'rgba(21, 21, 20, 0.5)',
 };

@@ -18,12 +18,15 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
   <Section>
     <Title>Projetos</Title>
-    <Description>
-      A nossa comunidade se organiza por meio de diversos projetos.
+    <Description style={{ textIndent: '2.5rem', marginBottom: '0.5rem' }}>
+      A nossa comunidade se organiza por meio de projetos. Não existe limite
+      para a quantidade de projetos, já que qualquer pessoa pode iniciar um
+      projeto se estiver comprometida com ele. Não tem nenhum problema se você
+      não quer criar um projeto novo! Na verdade, a maioria das pessoas
+      contribui esporadicamente em projetos que ela goste.
     </Description>
-    <Description>
-      Cada um deles possui um objetivo específico e usa tecnologias diferentes.
-      Veja os projetos que a galera está desenvolvendo:
+    <Description style={{ textIndent: '2.5rem' }}>
+      Veja alguns dos projetos que a comunidade desenvolve atualmente:
     </Description>
     <ProjectList>
       {projects.slice(0, 3).map((project) => (

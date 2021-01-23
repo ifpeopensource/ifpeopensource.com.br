@@ -13,8 +13,9 @@ const HeroHeader: React.FC = () => {
     <Container theme={actualTheme}>
       <Content>
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis,
-          elit facilisis sapien, fermentum, ornare porta.{' '}
+          Disseminando a cultura{' '}
+          <span style={{ whiteSpace: 'nowrap' }}>open source</span> no Instituto
+          Federal de Pernambuco.
         </Text>
 
         <Link href="https://github.com/ifpe-open-source/" passHref>

@@ -31,7 +31,7 @@ export const Button = styled.a`
   }
 
   @media (min-width: 768px) {
-    width: 100%;
+    width: 50%;
     height: 100%;
   }
 

@@ -8,13 +8,17 @@ const HowToJoin: React.FC = () => (
     <Title>Como participar?</Title>
     <Container>
       <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo neque
-        scelerisque lorem posuere id duis justo, odio ultrices. Vulputate enim,
-        eu cras integer lectus quam amet, venenatis mauris. Aliquam turpis a,
-        nisl dignissim tristique in tempus egestas commodo. Nisi orci mauris
-        vivamus ac.
+        <p style={{ marginBottom: '10px' }}>
+          Você é um estudante do IFPE? Entre em contato conosco!
+        </p>
+        <p>
+          Não estuda no IFPE? Ficaríamos felizes em contar com sua contribuição
+          nos nossos projetos.
+        </p>
       </Description>
-      <Button href="https://github.com/ifpe-open-source/">Lorem Ipsum!</Button>
+      <Button href="mailto:ifpeopensource@gmail.com?subject=Interesse em participar da comunidade!">
+        Vem com a gente!
+      </Button>
     </Container>
   </Section>
 );

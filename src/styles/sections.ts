@@ -19,3 +19,7 @@ export const Description = styled.p`
     font-size: 1.3rem;
   }
 `;
+
+export const Bold = styled.span`
+  font-weight: bold;
+`;
