@@ -7,15 +7,15 @@ const HowToJoin: React.FC = () => (
   <Section accent>
     <Title>Como participar?</Title>
     <Container>
-      <Description>
-        <p style={{ marginBottom: '10px' }}>
+      <div>
+        <Description style={{ marginBottom: '10px' }}>
           Você é um estudante do IFPE? Entre em contato conosco!
-        </p>
-        <p>
+        </Description>
+        <Description>
           Não estuda no IFPE? Ficaríamos felizes em contar com sua contribuição
           nos nossos projetos.
-        </p>
-      </Description>
+        </Description>
+      </div>
       <Button href="mailto:ifpeopensource@gmail.com?subject=Interesse em participar da comunidade!">
         Vem com a gente!
       </Button>
