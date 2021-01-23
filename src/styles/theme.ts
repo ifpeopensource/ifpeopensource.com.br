@@ -16,6 +16,6 @@ export const lightTheme = {
   text: '#1C1E20',
   formPlaceholder: '#56564E',
   header: '#FBFBFB',
-  detail: '#DFDFDF',
-  sectionAccent: '#F2F2F2',
+  detail: '#D0D0D0',
+  sectionAccent: '#E6E6E6',
 };
