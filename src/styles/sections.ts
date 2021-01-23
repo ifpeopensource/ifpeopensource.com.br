@@ -11,6 +11,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-size: 0.9rem;
+  line-height: 1.5;
 
   color: ${({ theme }) => theme.text};
 
