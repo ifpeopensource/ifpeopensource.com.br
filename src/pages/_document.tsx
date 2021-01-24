@@ -82,7 +82,7 @@ export default class MyDocument extends Document {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', 'GA_MEASUREMENT_ID');
+                gtag('config', 'G-EHL16L8N6S');
               `,
             }}
           />
