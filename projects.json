@@ -2,19 +2,19 @@
   {
     "title": "Website",
     "projectURL": "https://github.com/ifpe-open-source/website",
-    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
-    "techs": ["Next.js", "Typescript"]
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/website/main/projectImage.jpg",
+    "techs": ["Next.js", "TypeScript"]
   },
   {
-    "title": "Website",
-    "projectURL": "https://github.com/ifpe-open-source/website",
-    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
-    "techs": ["Next.js", "Typescript"]
+    "title": "Alvinator",
+    "projectURL": "https://github.com/ifpe-open-source/alvinator",
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/alvinator/main/projectImage.jpg",
+    "techs": ["JavaScript", "CSS", "HTML"]
   },
   {
-    "title": "Website",
-    "projectURL": "https://github.com/ifpe-open-source/website",
-    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
-    "techs": ["Next.js", "Typescript"]
+    "title": "Competições de Programação",
+    "projectURL": "https://github.com/ifpe-open-source/competicoes-de-programacao",
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/competicoes-de-programacao/main/projectImage.jpg",
+    "techs": []
   }
 ]

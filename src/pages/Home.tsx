@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { DefaultTheme } from 'styled-components';
 
 import Header from '../components/Header';
@@ -12,31 +11,21 @@ import Footer from '../components/Footer';
 
 import { Container } from '../styles/pages/Home';
 
-import projectList from '../../projects.json';
-import randomProjects from '../util/randomProjects';
-
 interface HomeProps {
   setTheme(theme: DefaultTheme): void;
   projects: IProject[];
 }
-const Home: React.FC<HomeProps> = ({ setTheme, projects }) => {
-  // Fallback caso os projetos não conseguirem ser passados pelo server
-  if (!projects) {
-    projects = randomProjects(projectList);
-  }
-
-  return (
-    <Container>
-      <Header setTheme={setTheme} />
-      <HeroHeader />
-      <SectionsContainer>
-        <Projects projects={projects} />
-        <HowToJoin />
-        <WhoWeAre />
-        <Contact />
-      </SectionsContainer>
-      <Footer />
-    </Container>
-  );
-};
+const Home: React.FC<HomeProps> = ({ setTheme, projects }) => (
+  <Container>
+    <Header setTheme={setTheme} />
+    <HeroHeader />
+    <SectionsContainer>
+      <Projects projects={projects} />
+      <HowToJoin />
+      <WhoWeAre />
+      <Contact />
+    </SectionsContainer>
+    <Footer />
+  </Container>
+);
 export default Home;
