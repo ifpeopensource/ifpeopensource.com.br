@@ -69,6 +69,23 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+          {/* Global site tag (gtag.js) - Google Analytics  */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'GA_MEASUREMENT_ID');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />
