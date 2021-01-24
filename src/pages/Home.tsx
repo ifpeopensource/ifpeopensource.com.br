@@ -1,59 +1,42 @@
+/* eslint-disable no-param-reassign */
 import { DefaultTheme } from 'styled-components';
 
 import Header from '../components/Header';
-
 import HeroHeader from '../components/HeroHeader';
-
 import SectionsContainer from '../components/SectionsContainer';
-import Projects from '../components/Projects';
+import Projects, { IProject } from '../components/Projects';
 import HowToJoin from '../components/HowToJoin';
 import WhoWeAre from '../components/WhoWeAre';
 import Contact from '../components/Contact';
-
 import Footer from '../components/Footer';
 
 import { Container } from '../styles/pages/Home';
 
+import projectList from '../../projects.json';
+import randomProjects from '../util/randomProjects';
+
 interface HomeProps {
   setTheme(theme: DefaultTheme): void;
+  projects: IProject[];
 }
+const Home: React.FC<HomeProps> = ({ setTheme, projects }) => {
+  // Fallback caso os projetos não conseguirem ser passados pelo server
+  if (!projects) {
+    projects = randomProjects(projectList);
+  }
 
-const Home: React.FC<HomeProps> = ({ setTheme }) => (
-  <Container>
-    <Header setTheme={setTheme} />
-    <HeroHeader />
-    <SectionsContainer>
-      <Projects
-        projects={[
-          {
-            title: 'Website',
-            projectURL: 'https://github.com/ifpe-open-source/website',
-            imageURL:
-              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
-            techs: ['Next.js', 'ReactJS', 'Typescript'],
-          },
-          {
-            title: 'Website',
-            projectURL: 'https://github.com/ifpe-open-source/website',
-            imageURL:
-              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
-            techs: ['Next.js', 'ReactJS', 'Typescript'],
-          },
-          {
-            title: 'Website',
-            projectURL: 'https://github.com/ifpe-open-source/website',
-            imageURL:
-              'https://images.unsplash.com/photo-1610062070518-55e6a3d3a290',
-            techs: ['Next.js', 'ReactJS', 'Typescript'],
-          },
-        ]}
-      />
-      <HowToJoin />
-      <WhoWeAre />
-      <Contact />
-    </SectionsContainer>
-    <Footer />
-  </Container>
-);
-
+  return (
+    <Container>
+      <Header setTheme={setTheme} />
+      <HeroHeader />
+      <SectionsContainer>
+        <Projects projects={projects} />
+        <HowToJoin />
+        <WhoWeAre />
+        <Contact />
+      </SectionsContainer>
+      <Footer />
+    </Container>
+  );
+};
 export default Home;

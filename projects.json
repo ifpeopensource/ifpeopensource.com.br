@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Website",
+    "projectURL": "https://github.com/ifpe-open-source/website",
+    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
+    "techs": ["Next.js", "Typescript"]
+  },
+  {
+    "title": "Website",
+    "projectURL": "https://github.com/ifpe-open-source/website",
+    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
+    "techs": ["Next.js", "Typescript"]
+  },
+  {
+    "title": "Website",
+    "projectURL": "https://github.com/ifpe-open-source/website",
+    "imageURL": "https://raw.githubusercontent.com/weltonfelix/website/main/projectImage.jpg",
+    "techs": ["Next.js", "Typescript"]
+  }
+]

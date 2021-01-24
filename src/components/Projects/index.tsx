@@ -4,7 +4,7 @@ import { Title, Description } from '../../styles/sections';
 import { ProjectList, ShowMoreButton } from './styles';
 import ProjectCard from './ProjectCard';
 
-interface IProject {
+export interface IProject {
   title: string;
   projectURL: string;
   imageURL: string;
@@ -12,7 +12,7 @@ interface IProject {
 }
 
 interface ProjectsProps {
-  projects: [IProject, IProject, IProject];
+  projects: IProject[];
 }
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
