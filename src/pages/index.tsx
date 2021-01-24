@@ -57,6 +57,9 @@ export async function getStaticProps(): Promise<IStaticProps> {
   for (const repo of repos) {
     const topics: ITopicsRequest = (
       await api.get(`/repos/${repo.full_name}/topics`, {
+        params: {
+          per_page: 4,
+        },
         headers: {
           Accept: 'application/vnd.github.mercy-preview+json',
         },
