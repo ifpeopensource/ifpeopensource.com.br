@@ -31,7 +31,7 @@ const Index: NextPage<IndexProps> = ({ setTheme, projects }) => (
   </div>
 );
 
-export async function getStaticProps(): Promise<IStaticProps> {
+export function getStaticProps(): IStaticProps {
   const projects = randomProjects(projectList);
 
   return {
