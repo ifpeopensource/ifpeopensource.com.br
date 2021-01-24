@@ -52,6 +52,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
           <Logo
             src="/assets/images/logo-light.svg"
             key={actualTheme.body}
+            alt="IFPE Open Source"
             width={139}
             height={47}
             className={pageTop ? 'pageTop' : ''}
@@ -60,6 +61,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
           <Logo
             src="/assets/images/logo-dark.svg"
             key={actualTheme.body}
+            alt="IFPE Open Source"
             width={139}
             height={47}
             className={pageTop ? 'pageTop' : ''}
@@ -72,6 +74,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
             checked: <span>🌜</span>,
             unchecked: <span>🌞</span>,
           }}
+          aria-label="tema"
         />
       </Content>
     </Container>
