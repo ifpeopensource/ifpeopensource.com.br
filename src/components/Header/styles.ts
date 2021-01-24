@@ -2,7 +2,8 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.header};
+  background: ${({ theme }) => `${theme.header}CC`};
+  backdrop-filter: blur(10px);
   max-width: 100%;
 
   position: sticky;
@@ -15,6 +16,7 @@ export const Container = styled.div`
         position: absolute;
 
         background:
+        backdrop-filter: none;
 
         z-index: 10;
         background: transparent;
