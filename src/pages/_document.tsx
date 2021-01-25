@@ -47,8 +47,64 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <meta
-            name="Description"
-            content="Comunidade Open Source do IFPE - Campus Recife"
+            name="title"
+            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+          />
+          <meta
+            name="description"
+            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+          />
+
+          <meta
+            itemProp="name"
+            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+          />
+          <meta
+            itemProp="description"
+            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+          />
+          <meta
+            itemProp="image"
+            content="https://ifpeopensource.vercel.app/social_image.png"
+          />
+
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta
+            property="og:url"
+            content="https://ifpeopensource.vercel.app/"
+          />
+          <meta
+            property="og:title"
+            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+          />
+          <meta
+            property="og:description"
+            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+          />
+          <meta
+            property="og:image"
+            content="https://ifpeopensource.vercel.app/social_image.png"
+          />
+
+          {/* <!-- Twitter --> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:url"
+            content="https://ifpeopensource.vercel.app/"
+          />
+          <meta
+            property="twitter:title"
+            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+          />
+          <meta
+            property="twitter:description"
+            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+          />
+          <meta
+            property="twitter:image"
+            content="https://ifpeopensource.vercel.app/social_image.png"
           />
 
           <link
@@ -69,7 +125,8 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
-          {/* Global site tag (gtag.js) - Google Analytics  */}
+
+          {/* <!--  Global site tag (gtag.js) - Google Analytics  -> */}
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
