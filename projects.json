@@ -8,13 +8,13 @@
   {
     "title": "Alvinator",
     "projectURL": "https://github.com/ifpe-open-source/alvinator",
-    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/alvinator/main/projectImage.jpg",
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/alvinator/master/docs/media/projectImage.jpg",
     "techs": ["JavaScript", "CSS", "HTML"]
   },
   {
     "title": "Competições de Programação",
     "projectURL": "https://github.com/ifpe-open-source/competicoes-de-programacao",
-    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/competicoes-de-programacao/main/projectImage.jpg",
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/competicoes-de-programacao/main/docs/imagens/ifos/projectImage.jpg",
     "techs": []
   }
 ]
