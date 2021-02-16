@@ -15,7 +15,7 @@ export const Container = styled.div`
       @media (min-width: 1024px) {
         position: absolute;
 
-        background:
+        background: none;
         backdrop-filter: none;
 
         z-index: 10;
@@ -24,7 +24,7 @@ export const Container = styled.div`
 
         border: none !important;
       }
-  `};
+    `};
 `;
 
 export const Content = styled.div`
