@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             label="GitHub"
           />
           <SocialButton
-            href="mailto:ifpeopensource@gmail.com"
+            href="mailto:contato@ifpeopensource.com.br"
             Icon={EmailIcon}
             label="E-mail"
           />

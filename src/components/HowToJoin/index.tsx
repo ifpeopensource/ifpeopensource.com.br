@@ -16,7 +16,7 @@ const HowToJoin: React.FC = () => (
           nos nossos projetos.
         </Description>
       </div>
-      <Button href="mailto:ifpeopensource@gmail.com?subject=Interesse em participar da comunidade!">
+      <Button href="mailto:contato@ifpeopensource.com.br?subject=Interesse em participar da comunidade!">
         Vem com a gente!
       </Button>
     </Container>

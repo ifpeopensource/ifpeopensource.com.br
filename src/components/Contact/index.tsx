@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     window.open(
-      `mailto:ifpeopensource@gmail.com?subject=${formState.subject}&body=${formState.message}`
+      `mailto:contato@ifpeopensource.com.br?subject=${formState.subject}&body=${formState.message}`
     );
   }
 
