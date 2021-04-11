@@ -39,10 +39,6 @@ const Footer: React.FC = () => {
             label="E-mail"
           />
         </Social>
-        <PolicyContainer>
-          <Link href="/terms">Termos de uso</Link>
-          <Link href="/privacy">Política de privacidade</Link>
-        </PolicyContainer>
       </Content>
     </Container>
   );
