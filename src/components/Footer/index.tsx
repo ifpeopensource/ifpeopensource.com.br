@@ -8,7 +8,7 @@ import { FiMail as EmailIcon } from 'react-icons/fi';
 import { darkTheme } from '../../styles/theme';
 
 import SocialButton from './SocialButton';
-import { Container, Content, Logo, PolicyContainer, Social } from './styles';
+import { Container, Content, Logo, Social } from './styles';
 
 const Footer: React.FC = () => {
   const actualTheme = useContext(ThemeContext);
