@@ -13,12 +13,12 @@ const WhoWeAre: React.FC = () => {
   return (
     <Section>
       <Title>Quem somos?</Title>
-      <Description style={{ textIndent: '2.5rem' }}>
-        Nós reconhecemos o impacto que pessoas motivadas e interessadas podem
-        fazer. O IFPE Open Source vem deste desejo de aproveitar o enorme
-        potencial que a comunidade de alunos do IFPE têm de usar a tecnologia
-        para criar soluções e compartilhá-las com os outros para modificar e
-        melhorar o nosso ambiente e o próprio IFPE. E claro, levamos junto todo
+      <Description>
+        Uma comunidade de alun@s interessados em computação, programação,
+        cultura maker e tecnologia em geral que promove projetos onde podemos
+        aproveitar o enorme potencial que a comunidade de alunos do IFPE têm de
+        usar a tecnologia para criar soluções e compartilhá-las com os outros
+        para modificar e melhorar o nosso ambiente. Junto com isso, levamos todo
         o conhecimento, experiência e networking que uma comunidade deste tipo
         pode proporcionar.
       </Description>
