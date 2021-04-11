@@ -8,7 +8,7 @@ import { FiMail as EmailIcon } from 'react-icons/fi';
 import { darkTheme } from '../../styles/theme';
 
 import SocialButton from './SocialButton';
-import { Container, Content, Logo, PolicyContainer, Social } from './styles';
+import { Container, Content, Logo, Social } from './styles';
 
 const Footer: React.FC = () => {
   const actualTheme = useContext(ThemeContext);
@@ -39,10 +39,6 @@ const Footer: React.FC = () => {
             label="E-mail"
           />
         </Social>
-        <PolicyContainer>
-          <Link href="/terms">Termos de uso</Link>
-          <Link href="/privacy">Política de privacidade</Link>
-        </PolicyContainer>
       </Content>
     </Container>
   );
