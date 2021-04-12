@@ -13,7 +13,7 @@ const WhoWeAre: React.FC = () => {
   return (
     <Section>
       <Title>Quem somos?</Title>
-      <Description>
+      <Description style={{ textIndent: '2.5rem' }}>
         Somos uma comunidade de alunos interessados em computação, programação,
         cultura maker e tecnologia em geral que promove projetos onde podemos
         aproveitar o enorme potencial que a comunidade de alunos do IFPE têm de
