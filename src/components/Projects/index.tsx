@@ -18,7 +18,7 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
   <Section>
     <Title>Projetos</Title>
-    <Description style={{ marginBottom: '0.5rem' }}>
+    <Description style={{ textIndent: '2.5rem', marginBottom: '0.5rem' }}>
       A comunidade se organiza por meio de projetos relacionados à programação,
       cultura maker, entre outros. Você pode ver, utilizar e contribuir para os
       projetos livremente, mas se quiser, também pode criar um novo.
