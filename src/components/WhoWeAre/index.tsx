@@ -18,7 +18,7 @@ const WhoWeAre: React.FC = () => {
         cultura maker e tecnologia em geral que promove projetos onde podemos
         aproveitar o enorme potencial que a comunidade de alunos do IFPE têm de
         usar a tecnologia para criar soluções e compartilhá-las com os outros
-        para modificar e melhorar o nosso ambiente. Junto com isso, levamos todo
+        para modificar e melhorar o nosso ambiente. Junto a isso, levamos todo
         o conhecimento, experiência e networking que uma comunidade deste tipo
         pode proporcionar.
       </Description>
