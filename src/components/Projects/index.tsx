@@ -20,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
     <Title>Projetos</Title>
     <Description style={{ marginBottom: '0.5rem' }}>
       A comunidade se organiza por meio de projetos relacionados à programação,
-      cultura maker, entre outros. Você pode ver e baixar e contribuir para os
+      cultura maker, entre outros. Você pode ver, utilizar e contribuir para os
       projetos livremente, mas se quiser, também pode criar um novo.
     </Description>
     <Description style={{ textIndent: '2.5rem' }}>
