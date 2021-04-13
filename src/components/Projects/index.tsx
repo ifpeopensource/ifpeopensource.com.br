@@ -19,11 +19,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
   <Section>
     <Title>Projetos</Title>
     <Description style={{ textIndent: '2.5rem', marginBottom: '0.5rem' }}>
-      A nossa comunidade se organiza por meio de projetos. Não existe limite
-      para a quantidade de projetos, já que qualquer pessoa pode iniciar um
-      projeto se estiver comprometida com ele. Não tem nenhum problema se você
-      não quer criar um projeto novo! Na verdade, a maioria das pessoas
-      contribui esporadicamente em projetos que ela goste.
+      A comunidade se organiza por meio de projetos relacionados à programação,
+      cultura maker, entre outros. Você pode utilizar e contribuir para os
+      projetos livremente, como também pode criar um novo e contribuir ainda mais para a comunidade.
     </Description>
     <Description style={{ textIndent: '2.5rem' }}>
       Veja alguns dos projetos que a comunidade desenvolve atualmente:

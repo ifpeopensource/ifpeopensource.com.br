@@ -13,7 +13,7 @@ const HowToJoin: React.FC = () => (
         </Description>
         <Description>
           Não estuda no IFPE? Ficaríamos felizes em contar com sua contribuição
-          nos nossos projetos.
+          nos projetos!
         </Description>
       </div>
       <Button href="mailto:contato@ifpeopensource.com.br?subject=Interesse em participar da comunidade!">

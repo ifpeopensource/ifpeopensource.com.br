@@ -69,8 +69,8 @@ const ReadMoreModal: React.FC<ModalProps> = ({
       <ModalText>
         Como você pode ter entendido na seção acima, comunidades são inerentes
         ao conceito de Open Source. E é assim que as comunidades Open Source
-        surgem: diversas pessoas interessadas e apaixonadas por tecnologia e
-        resolver problemas reais - tudo da forma mais livre possível. Essas
+        surgem: diversas <Bold>pessoas interessadas e apaixonadas por tecnologia e
+        resolver problemas reais - tudo da forma mais livre possível.</Bold> Essas
         comunidades se organizam em um ou mais projetos, sugerindo mudanças,
         discutindo melhorias e adicionando funcionalidades.
       </ModalText>
