@@ -1,3 +1,10 @@
+
+<h1 align="center">
+  <a target="blank" href="">
+    <img alt="Website do IFPE Open Source" title="Acesse o site" src="./projectImage.jpg" width="50%" />
+  </a>
+</h1>
+
 # Website
 
 <p align="center">
