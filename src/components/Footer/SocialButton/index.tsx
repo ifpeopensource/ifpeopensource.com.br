@@ -11,7 +11,7 @@ interface SocialButtonProps {
 
 const SocialButton: React.FC<SocialButtonProps> = ({ Icon, href, label }) => (
   <Link href={href} passHref>
-    <Button aria-label={label}>
+    <Button aria-label={label} target="_blank">
       <Icon size={40} />
     </Button>
   </Link>
