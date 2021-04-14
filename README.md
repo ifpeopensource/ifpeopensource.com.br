@@ -59,7 +59,7 @@ Contribuições, issues e pedidos de features são bem-vindos!<br />Sinta-se liv
 
 Após a sua pull request ser aceita, você pode excluir o seu branch.
 
-## Demonstre o seu apoio
+## 🌟 Demonstre o seu apoio
 
 Dê uma ⭐️ se este projeto lhe ajudou!
 
