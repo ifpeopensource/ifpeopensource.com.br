@@ -1,8 +1,7 @@
 /* eslint-disable object-curly-newline */
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import Link from 'next/link';
-import { AiFillGithub as GithubIcon } from 'react-icons/ai';
+import { AiFillGithub as GithubIcon, AiOutlineInstagram as InstagramIcon } from 'react-icons/ai';
 import { FiMail as EmailIcon } from 'react-icons/fi';
 
 import { darkTheme } from '../../styles/theme';
@@ -32,6 +31,11 @@ const Footer: React.FC = () => {
             href="https://github.com/ifpe-open-source"
             Icon={GithubIcon}
             label="GitHub"
+          />
+          <SocialButton
+            href="https://www.instagram.com/ifpeopensource/"
+            Icon={InstagramIcon}
+            label="Instagram"
           />
           <SocialButton
             href="mailto:contato@ifpeopensource.com.br"
