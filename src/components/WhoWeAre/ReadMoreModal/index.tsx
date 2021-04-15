@@ -93,7 +93,7 @@ const ReadMoreModal: React.FC<ModalProps> = ({
       <ModalText>
         Nós reconhecemos o{' '}
         <Bold>impacto que pessoas motivadas e interessadas podem ter</Bold>. O
-        IFPE Open Source vem deste desejo de aproveitar o enorme potencial que a
+        IFPE Open Source vem do desejo de aproveitar o enorme potencial que a
         comunidade de alunos do IFPE tem de{' '}
         <Bold>
           usar a tecnologia para criar soluções e compartilhá-las com os outros
