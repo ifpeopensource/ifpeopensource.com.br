@@ -1,8 +1,8 @@
 [
   {
-    "title": "Website",
-    "projectURL": "https://github.com/ifpe-open-source/website",
-    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/website/main/projectImage.jpg",
+    "title": "Website do IFPE Open Source",
+    "projectURL": "https://github.com/ifpe-open-source/ifpeopensource.com.br",
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/ifpeopensource.com.br/main/projectImage.jpg",
     "techs": ["Next.js", "TypeScript"]
   },
   {
