@@ -20,7 +20,7 @@
   {
     "title": "StockID",
     "projectURL": "https://github.com/ifpe-open-source/StockID",
-    "imageURL": "https://text-image-generator.vercel.app/api/jpeg?background=20201d&foreground=Ee0000&text=%3Cp%20style=%22font-size:2em;%20font-weight:%20bold;%22%3EStockID%3C/p%3E",
-    "techs": ["Arduino", "C++"]
+    "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/StockID/master/docs/media/projectImage.jpg",
+    "techs": ["Arduino", "C++", "HTML"]
   }
 ]
