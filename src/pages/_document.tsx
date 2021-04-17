@@ -48,11 +48,11 @@ export default class MyDocument extends Document {
           />
           <meta
             name="title"
-            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+            content="IFPE Open Source | Comunidade open source do IFPE"
           />
           <meta
             name="description"
-            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+            content="Comunidade de tecnologia e computação do Instituto Federal de Pernambuco."
           />
 
           <meta
@@ -61,11 +61,11 @@ export default class MyDocument extends Document {
           />
           <meta
             itemProp="description"
-            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+            content="Comunidade de tecnologia e computação do Instituto Federal de Pernambuco."
           />
           <meta
             itemProp="image"
-            content="https://ifpeopensource.vercel.app/social_image.png"
+            content="https://ifpeopensource.com.br/social_image.png"
           />
 
           {/* <!-- Open Graph / Facebook --> */}
@@ -73,38 +73,38 @@ export default class MyDocument extends Document {
           <meta property="og:locale" content="pt_BR" />
           <meta
             property="og:url"
-            content="https://ifpeopensource.vercel.app/"
+            content="https://ifpeopensource.com.br/"
           />
           <meta
             property="og:title"
-            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+            content="IFPE Open Source | Comunidade open source do IFPE"
           />
           <meta
             property="og:description"
-            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+            content="Comunidade de tecnologia e computação do Instituto Federal de Pernambuco."
           />
           <meta
             property="og:image"
-            content="https://ifpeopensource.vercel.app/social_image.png"
+            content="https://ifpeopensource.com.br/social_image.png"
           />
 
           {/* <!-- Twitter --> */}
           <meta property="twitter:card" content="summary_large_image" />
           <meta
             property="twitter:url"
-            content="https://ifpeopensource.vercel.app/"
+            content="https://ifpeopensource.com.br/"
           />
           <meta
             property="twitter:title"
-            content="IFPE Open Source | Comunidade open source do IFPE - Campus Recife"
+            content="IFPE Open Source | Comunidade open source do IFPE"
           />
           <meta
             property="twitter:description"
-            content="Disseminando a cultura open source no Instituto Federal de Pernambuco."
+            content="Comunidade de tecnologia e computação do Instituto Federal de Pernambuco."
           />
           <meta
             property="twitter:image"
-            content="https://ifpeopensource.vercel.app/social_image.png"
+            content="https://ifpeopensource.com.br/social_image.png"
           />
 
           <link
