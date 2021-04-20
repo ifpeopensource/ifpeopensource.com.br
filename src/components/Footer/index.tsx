@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { AiOutlineYoutube as YoutubeIcon,AiFillGithub as GithubIcon, AiOutlineInstagram as InstagramIcon } from 'react-icons/ai';
+import { AiOutlineYoutube as YoutubeIcon, AiFillGithub as GithubIcon, AiOutlineInstagram as InstagramIcon } from 'react-icons/ai';
 import { FiMail as EmailIcon } from 'react-icons/fi';
 
 import { darkTheme } from '../../styles/theme';
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             label="Instagram"
           />
           <SocialButton
-            href="https://www.youtube.com/channel/UCohCITlP65oacWlymb_zDjA/featured"
+            href="https://www.youtube.com/channel/UCohCITlP65oacWlymb_zDjA/"
             Icon={YoutubeIcon}
             label="Youtube"
           />
