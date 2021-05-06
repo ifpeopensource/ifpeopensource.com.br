@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 export const Container = styled.a`
   display: flex;
@@ -12,11 +13,10 @@ export const Container = styled.a`
   border-radius: 8px;
 `;
 
-export const ProjectImage = styled.img`
+export const ProjectImage = styled(Image)`
   width: 100%;
   max-height: 200px;
   object-fit: cover;
-
   border-radius: 8px;
 `;
 

@@ -1,8 +1,8 @@
-const withImages = require('next-images')
+const withImages = require('next-images');
 
 module.exports = withImages({
   esModule: true,
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'raw.githubusercontent.com'],
   },
-})
+});

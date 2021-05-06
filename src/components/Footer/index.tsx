@@ -1,13 +1,20 @@
 /* eslint-disable object-curly-newline */
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { AiOutlineYoutube as YoutubeIcon, AiFillGithub as GithubIcon, AiOutlineInstagram as InstagramIcon } from 'react-icons/ai';
+import {
+  AiOutlineYoutube as YoutubeIcon,
+  AiFillGithub as GithubIcon,
+  AiOutlineInstagram as InstagramIcon,
+} from 'react-icons/ai';
 import { FiMail as EmailIcon } from 'react-icons/fi';
 
 import { darkTheme } from '../../styles/theme';
 
 import SocialButton from './SocialButton';
-import { Container, Content, Logo, Social } from './styles';
+import { Container, Content, Social } from './styles';
+
+import LogoLight from '../../../public/assets/images/logo-vertical-light.svg';
+import LogoDark from '../../../public/assets/images/logo-vertical-dark.svg';
 
 const Footer: React.FC = () => {
   const actualTheme = useContext(ThemeContext);
@@ -15,17 +22,7 @@ const Footer: React.FC = () => {
   return (
     <Container>
       <Content>
-        {actualTheme === darkTheme ? (
-          <Logo
-            src="/assets/images/logo-vertical-light.svg"
-            alt="Logo IFPE Open Source"
-          />
-        ) : (
-          <Logo
-            src="/assets/images/logo-vertical-dark.svg"
-            alt="Logo IFPE Open Source"
-          />
-        )}
+        {actualTheme === darkTheme ? <LogoLight /> : <LogoDark />}
         <Social>
           <SocialButton
             href="https://github.com/ifpe-open-source"

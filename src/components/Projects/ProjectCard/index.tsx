@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => (
   <Link href={projectURL} passHref>
     <Container type="button">
-      <ProjectImage src={imageURL} alt={title} />
+      <ProjectImage src={imageURL} alt={title} width="500" height="281" />
       <div>
         <ProjectTitle>{title}</ProjectTitle>
         <ProjectTechs>
