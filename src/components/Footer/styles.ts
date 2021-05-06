@@ -34,8 +34,9 @@ export const Social = styled.div`
   grid-area: Social;
 
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-end;
+  flex-wrap: wrap-reverse;
   gap: 16px;
 `;
 
