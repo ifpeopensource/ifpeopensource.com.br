@@ -24,10 +24,10 @@ export const Content = styled.footer`
   @media (min-width: 768px) {
     padding: 32px 16px;
   }
-`;
 
-export const Logo = styled.img`
-  grid-area: Logo;
+  & > svg {
+    grid-area: Logo;
+  }
 `;
 
 export const Social = styled.div`
