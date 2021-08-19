@@ -37,7 +37,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
         />
       ))}
     </ProjectList>
-    <Link href="https://github.com/ifpe-open-source" passHref>
+    <Link href="https://github.com/ifpeopensource" passHref>
       <ShowMoreButton>Ver mais</ShowMoreButton>
     </Link>
   </Section>
