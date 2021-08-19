@@ -16,7 +16,7 @@ const HeroHeader: React.FC = () => {
           Comunidade de tecnologia e computação do Instituto Federal de Pernambuco
         </Text>
 
-        <Link href="https://github.com/ifpe-open-source/" passHref>
+        <Link href="https://github.com/ifpeopensource/" passHref>
           <Button>Veja no GitHub</Button>
         </Link>
       </Content>
