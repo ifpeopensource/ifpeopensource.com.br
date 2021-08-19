@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         {actualTheme === darkTheme ? <LogoLight /> : <LogoDark />}
         <Social>
           <SocialButton
-            href="https://github.com/ifpe-open-source"
+            href="https://github.com/ifpeopensource"
             Icon={GithubIcon}
             label="GitHub"
           />
