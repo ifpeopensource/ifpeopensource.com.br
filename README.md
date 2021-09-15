@@ -68,4 +68,4 @@ Dê uma ⭐️ se este projeto lhe ajudou!
 O website do IFPE Open Source está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ***
-Feito com ♥ por Welton Felix :wave: [Entre em contato!](mailto:welton@ifpeopensource.com.br) e por Fábio Papais :wave: [Entre em contato!](mailto:fabio@ifpeopensource.com.br) no [<img src="https://github.com/ifpe-open-source.png" width="15px"/> IFPE Open Source](https://ifpeopensource.com.br)
+Feito com ♥ por Welton Felix :wave: [Entre em contato!](mailto:welton@ifpeopensource.com.br) e por Fábio Papais :wave: [Entre em contato!](mailto:fabio@ifpeopensource.com.br) no [<img src="https://github.com/ifpeopensource.png" width="15px"/> IFPE Open Source](https://ifpeopensource.com.br)
