@@ -37,6 +37,7 @@ const ReadMoreModal: React.FC<ModalProps> = ({
       style={{
         overlay: {
           backgroundColor: theme.modalBackground,
+          zIndex: 10,
         },
         content: {
           backgroundColor: theme.body,
