@@ -1,11 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
 import Section from '../Section';
 import { Description, Title } from '../../styles/sections';
-import { ReadMoreButton } from './styles';
 import ReadMoreModal from './ReadMoreModal';
+
+import { useScrollBlock } from '../../hooks/useScrollBlock';
+
+import { ReadMoreButton } from './styles';
 
 const WhoWeAre: React.FC = () => {
   const [modal, setModal] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
+
+  useEffect(() => {
+    modal ? blockScroll(document) : allowScroll(document);
+  }, [modal]);
 
   function toggleModal() {
     setModal(!modal);
