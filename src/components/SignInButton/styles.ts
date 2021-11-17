@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 interface ButtonProps {
-  backgroundColor?: string;
+  isSignedIn: boolean;
+  theme: any;
 }
 
-export const Button = styled.button`
+export const Button = styled.button.attrs((props: ButtonProps) => ({
+  isSignedIn: props.isSignedIn,
+}))`
   cursor: pointer;
   height: 3rem;
   border-radius: 8px;
-  background: ${(props: ButtonProps) => props.backgroundColor || '#333333'};
+  background: ${(props: ButtonProps) =>
+    props.isSignedIn ? props.theme.primary : '#333333'};
   border: 0;
   padding: 0 2rem;
 
