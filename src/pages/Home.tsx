@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ setTheme, projects }) => {
   }
   return (
     <Container>
-      <Header setTheme={setTheme} />
+      <Header setTheme={setTheme} isHomePage={true} />
       <HeroHeader />
       <SectionsContainer>
         <Projects projects={projects} />

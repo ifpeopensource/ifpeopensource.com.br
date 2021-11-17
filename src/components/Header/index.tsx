@@ -9,12 +9,13 @@ import { Container, Content, Logo } from './styles';
 
 interface HeaderProps {
   setTheme(theme: DefaultTheme): void;
+  isHomePage?: boolean;
   ref?: RefObject<HTMLDivElement>;
 }
 
-const Header: React.FC<HeaderProps> = ({ setTheme }) => {
+const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
   const [actualTheme, setActualTheme] = useState(useContext(ThemeContext));
-  const [pageTop, setPageTop] = useState(true);
+  const [pageTop, setPageTop] = useState(isHomePage);
 
   function changeTheme() {
     if (actualTheme === darkTheme) {
@@ -35,8 +36,10 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
   }
 
   useEffect(() => {
-    setPageTop(window.pageYOffset < 0.75 * window.innerHeight);
-    window.addEventListener('scroll', handleScroll);
+    if (isHomePage) {
+      setPageTop(window.pageYOffset < 0.75 * window.innerHeight);
+      window.addEventListener('scroll', handleScroll);
+    }
   }, []);
 
   return (
