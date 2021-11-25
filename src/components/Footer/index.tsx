@@ -7,11 +7,12 @@ import {
   AiOutlineInstagram as InstagramIcon,
 } from 'react-icons/ai';
 import { FiMail as EmailIcon } from 'react-icons/fi';
+import Link from 'next/link';
 
 import { darkTheme } from '../../styles/theme';
 
 import SocialButton from './SocialButton';
-import { Container, Content, Social } from './styles';
+import { Container, Content, Social, ImageButton } from './styles';
 
 import LogoLight from '../../../public/assets/images/logo-vertical-light.svg';
 import LogoDark from '../../../public/assets/images/logo-vertical-dark.svg';
@@ -24,6 +25,11 @@ const Footer: React.FC = () => {
       <Content>
         {actualTheme === darkTheme ? <LogoLight /> : <LogoDark />}
         <Social>
+          <Link href={"https://hackclub.com"} passHref>
+            <ImageButton aria-label="Hack Club" target="_blank" rel="noopener noreferrer">
+              <img src="https://assets.hackclub.com/icon-square.svg" alt="Hack Club" />
+            </ImageButton>
+          </Link>
           <SocialButton
             href="https://github.com/ifpeopensource"
             Icon={GithubIcon}

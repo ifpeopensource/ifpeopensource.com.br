@@ -65,3 +65,22 @@ export const PolicyContainer = styled.div`
     gap: 16px;
   }
 `;
+
+export const ImageButton = styled.a`
+  width: 56px;
+  height: 56px;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  }
+
+  & > img {
+    width: 56px;    
+    border-radius: 8px;
+  }
+`;
