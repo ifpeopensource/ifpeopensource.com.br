@@ -3,8 +3,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { DefaultTheme } from 'styled-components';
 
-import { Container } from '../styles/pages/Home';
-
 import Projects, { IProject } from '../components/Projects';
 import Header from '../components/Header';
 import HeroHeader from '../components/HeroHeader';
@@ -13,6 +11,8 @@ import HowToJoin from '../components/HowToJoin';
 import WhoWeAre from '../components/WhoWeAre';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+
+import { Container } from '../styles/pages/Home';
 
 import projectList from '../../projects.json';
 import randomProjects from '../util/randomProjects';
@@ -30,7 +30,7 @@ interface IStaticProps {
 }
 
 const Index: NextPage<IndexProps> = ({ setTheme, projects }) => (
-  <div>
+  <>
     <Head>
       <title>IFPE Open Source</title>
     </Head>
@@ -45,7 +45,7 @@ const Index: NextPage<IndexProps> = ({ setTheme, projects }) => (
       </SectionsContainer>
       <Footer />
     </Container>
-  </div>
+  </>
 );
 
 export function getStaticProps(): IStaticProps {
