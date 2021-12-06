@@ -1,18 +1,25 @@
 import { FaGithub } from 'react-icons/fa';
-import { signIn, signOut, useSession } from 'next-auth/client';
 
 import { Button } from './styles';
 
-const SignInButton = () => {
-  const [session] = useSession();
+interface SignInButtonProps {
+  isSignedIn?: boolean;
+  signIn: () => void;
+  signOut: () => void;
+}
 
-  return session ? (
-    <Button onClick={() => signOut()} isSignedIn={true}>
+const SignInButton: React.FC<SignInButtonProps> = ({
+  isSignedIn,
+  signIn,
+  signOut,
+}) => {
+  return isSignedIn ? (
+    <Button onClick={signOut} isSignedIn={isSignedIn}>
       <FaGithub />
       Desconectar-se
     </Button>
   ) : (
-    <Button onClick={() => signIn('github')}>
+    <Button onClick={signIn}>
       <FaGithub />
       Entrar com o GitHub
     </Button>

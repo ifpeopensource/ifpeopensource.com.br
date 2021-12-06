@@ -1,21 +1,48 @@
 import { DefaultTheme } from 'styled-components';
+import { signIn, signOut, useSession } from 'next-auth/client';
+import { Session } from 'next-auth';
 
 import Header from '../components/Header';
 import SignInButton from '../components/SignInButton';
+import UserCard from '../components/UserCard';
 
-import { Container, Content } from '../styles/pages/Member.ts';
-
+import { Container, Content } from '../styles/pages/Member';
 interface MemberProps {
   setTheme(theme: DefaultTheme): void;
 }
 
+interface UserSession extends Session {
+  ghUsername: string;
+}
+
 const Member: React.FC<MemberProps> = ({ setTheme }) => {
-  return (
+  const session = useSession()[0] as UserSession;
+
+  return session ? (
+    <Container>
+      <Header setTheme={setTheme} />
+      <Content>
+        <p>Obrigado por ser uma pessoa tão incrível, {session.user.name}!</p>
+        <UserCard
+          user={{
+            avatarUrl: session.user.image,
+            name: session.user.name,
+            ghUsername: session.ghUsername,
+          }}
+        />
+        <SignInButton
+          isSignedIn
+          signIn={() => signIn('github')}
+          signOut={signOut}
+        />
+      </Content>
+    </Container>
+  ) : (
     <Container>
       <Header setTheme={setTheme} />
       <Content>
         <p>Para criar seu card de membro, faça login com seu GitHub</p>
-        <SignInButton />
+        <SignInButton signIn={() => signIn('github')} signOut={signOut} />
       </Content>
     </Container>
   );
