@@ -13,6 +13,7 @@ interface MemberProps {
 
 interface UserSession extends Session {
   ghUsername: string;
+  teams: string[];
 }
 
 const Member: React.FC<MemberProps> = ({ setTheme }) => {
@@ -28,6 +29,7 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
             avatarUrl: session.user.image,
             name: session.user.name,
             ghUsername: session.ghUsername,
+            teams: session.teams,
           }}
         />
         <SignInButton

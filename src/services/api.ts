@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: `https://${process.env.GH_CLIENT_ID}:${process.env.GH_CLIENT_SECRET}@api.github.com/`,
+const ghApi = axios.create({
+  baseURL: `https://api.github.com/`,
+  headers: {
+    authorization: `Bearer ${process.env.GH_TOKEN}`,
+  },
 });
 
-export default api;
+export default ghApi;

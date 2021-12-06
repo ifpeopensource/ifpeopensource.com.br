@@ -4,9 +4,11 @@ import { query as q } from 'faunadb';
 import axios from 'axios';
 
 import { fauna } from '../../../services/fauna';
+import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
 
 interface FaunaMember {
   gh_id: string;
+  user_teams: string[];
 }
 
 export default NextAuth({
@@ -39,6 +41,7 @@ export default NextAuth({
         return {
           ...session,
           ghUsername: response.data.login,
+          teams: member.user_teams,
         };
       } catch {
         return { ...session, ghUsername: null };
@@ -66,6 +69,16 @@ export default NextAuth({
           )
         );
 
+        const userTeams = await getTeamsByUserLogin(id as number);
+
+        await fauna.query(
+          q.Update(
+            q.Select('ref', q.Get(q.Match(q.Index('member_by_gh_id'), id))),
+            {
+              data: { user_teams: userTeams },
+            }
+          )
+        );
 
         return true;
       } catch {

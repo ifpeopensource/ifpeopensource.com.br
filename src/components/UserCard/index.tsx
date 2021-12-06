@@ -7,6 +7,7 @@ interface UserCardProps {
     avatarUrl: string;
     name: string;
     ghUsername: string;
+    teams: string[];
   };
 }
 
@@ -18,6 +19,9 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
       <div>
         <FaGithub /> {user.ghUsername}
       </div>
+      {user.teams.map((team) => (
+        <p key={team}>{team}</p>
+      ))}
     </Card>
   );
 };
