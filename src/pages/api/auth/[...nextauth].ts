@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth';
+import NextAuth, { Profile } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
@@ -9,6 +9,14 @@ import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
 interface FaunaMember {
   gh_id: string;
   user_teams: string[];
+}
+
+interface GitHubProfile extends Profile {
+  organizations_url: string;
+}
+
+interface GitHubOrganization {
+  id: number;
 }
 
 export default NextAuth({
@@ -50,7 +58,18 @@ export default NextAuth({
     },
     async signIn({ user, profile }) {
       const { email } = user;
-      const { id } = profile;
+      const { id, organizations_url } = profile as GitHubProfile;
+
+      const { data: organizationsData } = await axios.get(organizations_url);
+
+      const isMember = organizationsData.filter(
+        (organization: GitHubOrganization) =>
+          organization.id.toString() === process.env.GH_ORG_ID
+      );
+
+      if (!isMember) {
+        return false;
+      }
 
       try {
         await fauna.query(
