@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DefaultTheme } from 'styled-components';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 
 import Header from '../components/Header';
@@ -19,8 +19,13 @@ interface UserSession extends Session {
   teams: string[];
 }
 
+interface AppSession {
+  data: UserSession;
+  status: 'authenticated' | 'loading' | 'unauthenticated';
+}
+
 const Member: React.FC<MemberProps> = ({ setTheme }) => {
-  const session = useSession()[0] as UserSession;
+  const { data: session, status } = useSession() as AppSession;
 
   const [isDeleteCardModalOpen, setIsDeleteCardModalOpen] = useState(false);
 

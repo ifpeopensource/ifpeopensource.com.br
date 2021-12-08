@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
+import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
 
@@ -13,14 +13,15 @@ interface FaunaMember {
 
 export default NextAuth({
   providers: [
-    Providers.GitHub({
+    GitHubProvider({
       clientId: process.env.GH_CLIENT_ID,
       clientSecret: process.env.GH_CLIENT_SECRET,
-      scope: 'read:user',
+      authorization:
+        'https://github.com/login/oauth/authorize?scope=read:user+read:org',
     }),
   ],
   callbacks: {
-    async session(session) {
+    async session({ session, token, user }) {
       try {
         const member: FaunaMember = await fauna.query(
           q.Select(
@@ -47,8 +48,10 @@ export default NextAuth({
         return { ...session, ghUsername: null };
       }
     },
-    async signIn(user) {
-      const { id, email } = user;
+    async signIn({ user, profile }) {
+      const { email } = user;
+      const { id } = profile;
+
       try {
         await fauna.query(
           q.If(
