@@ -24,4 +24,16 @@ export const Content = styled.main`
   p {
     font-size: 1.5rem;
   }
+
+  span.deleteCard {
+    color: ${({ theme }) => theme.primary};
+    text-decoration: underline;
+
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 `;

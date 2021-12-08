@@ -7,7 +7,7 @@ export const darkTheme = {
   header: '#0A0A0A',
   detail: '#20201D',
   sectionAccent: '#303030',
-  modalBackground: 'rgba(21, 21, 20, 0.5)',
+  modalBackground: 'rgba(3, 3, 3, 0.75)',
 };
 
 export const lightTheme = {
