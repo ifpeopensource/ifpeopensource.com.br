@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, useTheme } from 'styled-components';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 import Head from 'next/head';
 import axios from 'axios';
+import { ClipLoader } from 'react-spinners';
 
 import Header from '../components/Header';
 import SignInButton from '../components/SignInButton';
@@ -11,6 +12,7 @@ import UserCard from '../components/UserCard';
 import DeleteCardModal from '../components/DeleteCardModal';
 
 import { Container, Content } from '../styles/pages/Member';
+
 interface MemberProps {
   setTheme(theme: DefaultTheme): void;
 }
@@ -27,6 +29,7 @@ interface AppSession {
 
 const Member: React.FC<MemberProps> = ({ setTheme }) => {
   const { data: session, status } = useSession() as AppSession;
+  const theme = useTheme();
 
   const [isDeleteCardModalOpen, setIsDeleteCardModalOpen] = useState(false);
 
@@ -42,52 +45,62 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
     });
   }
 
-  return session ? (
-    <Container>
-      <Head>
-        <title>{session.user.name} | IFPE Open Source</title>
-      </Head>
+  if (status === 'authenticated') {
+    return (
+      <Container>
+        <Head>
+          <title>{session.user.name} | IFPE Open Source</title>
+        </Head>
 
-      <Header setTheme={setTheme} />
-      <Content>
-        <p>Obrigado por ser uma pessoa tão incrível, {session.user.name}!</p>
-        <UserCard
-          user={{
-            avatarUrl: session.user.image,
-            name: session.user.name,
-            ghUsername: session.ghUsername,
-            teams: session.teams,
-          }}
+        <Header setTheme={setTheme} />
+        <Content>
+          <p>Obrigado por ser uma pessoa tão incrível, {session.user.name}!</p>
+          <UserCard
+            user={{
+              avatarUrl: session.user.image,
+              name: session.user.name,
+              ghUsername: session.ghUsername,
+              teams: session.teams,
+            }}
+          />
+          <SignInButton
+            isSignedIn
+            signIn={() => signIn('github')}
+            signOut={signOut}
+          />
+          <span className="deleteCard">
+            <a onClick={toggleDeleteCardModal}>Apagar card</a>
+          </span>
+        </Content>
+        <DeleteCardModal
+          isOpen={isDeleteCardModalOpen}
+          toggleModal={toggleDeleteCardModal}
+          onDelete={deleteCard}
+          pageRootElement="__next"
         />
-        <SignInButton
-          isSignedIn
-          signIn={() => signIn('github')}
-          signOut={signOut}
-        />
-        <span className="deleteCard">
-          <a onClick={toggleDeleteCardModal}>Apagar card</a>
-        </span>
-      </Content>
-      <DeleteCardModal
-        isOpen={isDeleteCardModalOpen}
-        toggleModal={toggleDeleteCardModal}
-        onDelete={deleteCard}
-        pageRootElement="__next"
-      />
-    </Container>
-  ) : (
-    <Container>
-      <Head>
-        <title>Crie seu card | IFPE Open Source</title>
-      </Head>
+      </Container>
+    );
+  } else {
+    return (
+      <Container>
+        <Head>
+          <title>Crie seu card | IFPE Open Source</title>
+        </Head>
 
-      <Header setTheme={setTheme} />
-      <Content>
-        <p>Para criar seu card de membro, faça login com seu GitHub</p>
-        <SignInButton signIn={() => signIn('github')} signOut={signOut} />
-      </Content>
-    </Container>
-  );
+        <Header setTheme={setTheme} />
+        <Content>
+          {status === 'loading' ? (
+            <ClipLoader color={theme.primary}/>
+          ) : (
+            <>
+              <p>Para criar seu card de membro, faça login com seu GitHub</p>
+              <SignInButton signIn={() => signIn('github')} signOut={signOut} />
+            </>
+          )}
+        </Content>
+      </Container>
+    );
+  }
 };
 
 export default Member;
