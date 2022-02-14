@@ -37,4 +37,8 @@ export const Button = styled.button.attrs((props: ButtonProps) => ({
   &:hover {
     filter: brightness(0.8);
   }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;

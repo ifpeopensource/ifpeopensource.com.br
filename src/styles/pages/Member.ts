@@ -21,8 +21,9 @@ export const Content = styled.main`
 
   gap: 2rem;
 
-  p {
+  & > p {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   span.deleteCard {

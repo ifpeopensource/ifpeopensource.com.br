@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { DefaultTheme } from 'styled-components';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
+import Head from 'next/head';
+import axios from 'axios';
 
 import Header from '../components/Header';
 import SignInButton from '../components/SignInButton';
@@ -9,7 +11,6 @@ import UserCard from '../components/UserCard';
 import DeleteCardModal from '../components/DeleteCardModal';
 
 import { Container, Content } from '../styles/pages/Member';
-import axios from 'axios';
 interface MemberProps {
   setTheme(theme: DefaultTheme): void;
 }
@@ -43,6 +44,10 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
 
   return session ? (
     <Container>
+      <Head>
+        <title>{session.user.name} | IFPE Open Source</title>
+      </Head>
+
       <Header setTheme={setTheme} />
       <Content>
         <p>Obrigado por ser uma pessoa tão incrível, {session.user.name}!</p>
@@ -72,6 +77,10 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
     </Container>
   ) : (
     <Container>
+      <Head>
+        <title>Crie seu card | IFPE Open Source</title>
+      </Head>
+
       <Header setTheme={setTheme} />
       <Content>
         <p>Para criar seu card de membro, faça login com seu GitHub</p>

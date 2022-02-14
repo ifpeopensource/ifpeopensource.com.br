@@ -3,6 +3,7 @@ import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
 
+import ghApi from '../../../services/api';
 import { fauna } from '../../../services/fauna';
 import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
 
@@ -43,9 +44,7 @@ export default NextAuth({
           )
         );
 
-        const response = await axios.get(
-          `https://api.github.com/user/${member.gh_id}`
-        );
+        const response = await ghApi.get(`/user/${member.gh_id}`);
 
         return {
           ...session,
