@@ -35,7 +35,7 @@ const Index: NextPage<IndexProps> = ({ setTheme, projects }) => (
       <title>IFPE Open Source</title>
     </Head>
     <Container>
-      <Header setTheme={setTheme} />
+      <Header setTheme={setTheme} isHomePage />
       <HeroHeader />
       <SectionsContainer>
         <Projects projects={projects} />
