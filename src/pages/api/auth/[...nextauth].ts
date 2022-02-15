@@ -21,6 +21,7 @@ interface GitHubOrganization {
 }
 
 export default NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GitHubProvider({
       clientId: process.env.GH_CLIENT_ID,
