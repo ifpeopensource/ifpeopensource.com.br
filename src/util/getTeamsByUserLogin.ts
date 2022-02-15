@@ -5,10 +5,6 @@ interface Team {
   name: string;
 }
 
-interface Member {
-  id: number;
-}
-
 export default async function getTeamsByUserId(userId: number) {
   const { data: teams } = await ghApi.get('/orgs/ifpeopensource/teams');
 

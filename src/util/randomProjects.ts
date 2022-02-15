@@ -1,4 +1,4 @@
-import type { IProject } from '../components/Projects';
+import type { IProject } from '../components/HomeSections/Projects';
 
 /**
  * A função randomProjects recebe uma lista de projetos e retorna n projetos
