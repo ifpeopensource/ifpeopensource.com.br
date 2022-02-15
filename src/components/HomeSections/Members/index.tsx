@@ -16,7 +16,7 @@ interface MembersProps {
 }
 
 const Members: React.FC<MembersProps> = ({ members }) => (
-  <Section>
+  <Section accent>
     <Title>Membros</Title>
     <Description>
       Estas são algumas pessoas que fazem o IFPE Open Source ser o que ele é:

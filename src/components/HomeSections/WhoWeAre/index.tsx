@@ -20,7 +20,7 @@ const WhoWeAre: React.FC = () => {
     setModal(!modal);
   }
   return (
-    <Section>
+    <Section accent>
       <Title>Quem somos?</Title>
       <Description style={{ textIndent: '2.5rem' }}>
         Somos uma comunidade de alunos interessados em computação, programação,

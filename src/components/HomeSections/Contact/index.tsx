@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Section accent>
+    <Section>
       <Title>Contato</Title>
       <ContactForm onSubmit={(e) => handleSubmit(e)}>
         <SubjectField
