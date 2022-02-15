@@ -9,6 +9,8 @@ import {
   UserName,
 } from './styles';
 
+import getRandomArrayItems from '../../util/getRandomArrayItems';
+
 import teamsConfig from '../../../teams.json';
 interface UserCardProps {
   user: {
@@ -35,28 +37,32 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
       <GroupsContainer>
         {isShort
           ? (function () {
-              const randomTeams = user.teams
-                .sort(() => 0.5 - Math.random())
-                .slice(0, 2); // Select two random items
+              const randomTeams = getRandomArrayItems(user.teams, 2);
               return [
-                <span
-                  key={randomTeams[0]}
-                  style={{
-                    backgroundColor:
-                      teamsConfig[randomTeams[0]]?.color || getRandomHexColor(),
-                  }}
-                >
-                  {randomTeams[0]}
-                </span>,
-                <span
-                  key={randomTeams[1]}
-                  style={{
-                    backgroundColor:
-                      teamsConfig[randomTeams[1]]?.color || getRandomHexColor(),
-                  }}
-                >
-                  {randomTeams[1]}
-                </span>,
+                !!randomTeams[0] && (
+                  <span
+                    key={randomTeams[0]}
+                    style={{
+                      backgroundColor:
+                        teamsConfig[randomTeams[0]]?.color ||
+                        getRandomHexColor(),
+                    }}
+                  >
+                    {randomTeams[0]}
+                  </span>
+                ),
+                !!randomTeams[1] && (
+                  <span
+                    key={randomTeams[1]}
+                    style={{
+                      backgroundColor:
+                        teamsConfig[randomTeams[1]]?.color ||
+                        getRandomHexColor(),
+                    }}
+                  >
+                    {randomTeams[1]}
+                  </span>
+                ),
               ];
             })()
           : user.teams.map((team) => (
