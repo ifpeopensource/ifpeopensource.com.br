@@ -20,9 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       q.Delete(
         q.Select(
           'ref',
-          q.Get(
-            q.Match(q.Index('member_by_email'), q.Casefold(session.user.email))
-          )
+          q.Get(q.Match(q.Index('member_by_gh_id'), session.ghId))
         )
       )
     );

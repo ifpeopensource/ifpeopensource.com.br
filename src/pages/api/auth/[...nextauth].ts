@@ -20,6 +20,11 @@ interface GitHubOrganization {
   id: number;
 }
 
+interface GithubUserEmail {
+  email: string;
+  primary: boolean;
+}
+
 export default NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -27,37 +32,44 @@ export default NextAuth({
       clientId: process.env.GH_CLIENT_ID,
       clientSecret: process.env.GH_CLIENT_SECRET,
       authorization:
-        'https://github.com/login/oauth/authorize?scope=read:user+read:org',
+        'https://github.com/login/oauth/authorize?scope=read:user+read:org+user:email',
     }),
   ],
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session, token }) {
+      const ghId = Number(token.sub);
+
       try {
         const member: FaunaMember = await fauna.query(
-          q.Select(
-            ['data'],
-            q.Get(
-              q.Match(
-                q.Index('member_by_email'),
-                q.Casefold(session.user.email)
-              )
-            )
-          )
+          q.Select(['data'], q.Get(q.Match(q.Index('member_by_gh_id'), ghId)))
         );
 
-        const response = await ghApi.get(`/user/${member.gh_id}`);
+        const response = await ghApi.get(`/user/${ghId}`);
 
         return {
           ...session,
           ghUsername: response.data.login,
+          ghId,
           teams: member.user_teams,
         };
       } catch {
         return { ...session, ghUsername: null };
       }
     },
-    async signIn({ user, profile }) {
-      const { email } = user;
+    async signIn({ profile, account }) {
+      const { data: emails } = await axios.get(
+        'https://api.github.com/user/emails',
+        {
+          headers: {
+            Authorization: `Bearer ${account.access_token}`,
+          },
+        }
+      );
+
+      const email = emails.filter((data: GithubUserEmail) => {
+        return !!data.primary;
+      })[0].email;
+
       const { id, organizations_url } = profile as GitHubProfile;
 
       const { data: organizationsData } = await axios.get(organizations_url);
