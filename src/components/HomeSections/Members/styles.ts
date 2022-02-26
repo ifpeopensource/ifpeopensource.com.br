@@ -4,7 +4,6 @@ export const MemberList = styled.div`
   margin-top: 24px;
 
   display: grid;
-  justify-content: center;
   align-content: center;
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 16px;
