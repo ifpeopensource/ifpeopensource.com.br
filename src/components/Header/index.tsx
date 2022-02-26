@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState, RefObject } from 'react';
 import ThemeToggler from 'react-toggle';
 import { DefaultTheme, ThemeContext } from 'styled-components';
+import Link from 'next/link';
 
 import { darkTheme, lightTheme } from '../../styles/theme';
 
@@ -51,25 +52,29 @@ const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
       className={pageTop ? 'pageTop' : ''}
     >
       <Content className={pageTop ? 'pageTop' : ''}>
-        {actualTheme === darkTheme ? (
-          <Logo
-            src="/assets/images/logo-light.svg"
-            key={actualTheme.body}
-            alt="IFPE Open Source"
-            width={139}
-            height={47}
-            className={pageTop ? 'pageTop' : ''}
-          />
-        ) : (
-          <Logo
-            src="/assets/images/logo-dark.svg"
-            key={actualTheme.body}
-            alt="IFPE Open Source"
-            width={139}
-            height={47}
-            className={pageTop ? 'pageTop' : ''}
-          />
-        )}
+        <Link href="/">
+          <a style={isHomePage && { pointerEvents: 'none' }}>
+            {actualTheme === darkTheme ? (
+              <Logo
+                src="/assets/images/logo-light.svg"
+                key={actualTheme.body}
+                alt="IFPE Open Source"
+                width={139}
+                height={47}
+                className={pageTop ? 'pageTop' : ''}
+              />
+            ) : (
+              <Logo
+                src="/assets/images/logo-dark.svg"
+                key={actualTheme.body}
+                alt="IFPE Open Source"
+                width={139}
+                height={47}
+                className={pageTop ? 'pageTop' : ''}
+              />
+            )}
+          </a>
+        </Link>
         <ThemeToggler
           defaultChecked
           onChange={changeTheme}
