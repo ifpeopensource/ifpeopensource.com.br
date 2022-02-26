@@ -19,7 +19,8 @@ const Members: React.FC<MembersProps> = ({ members }) => (
   <Section accent>
     <Title>Membros</Title>
     <Description>
-      Estas são algumas pessoas que fazem o IFPE Open Source ser o que ele é:
+      Estas são algumas das pessoas que fazem o IFPE Open Source ser o que ele
+      é:
     </Description>
     <MemberList>
       {members.map((member) => (
