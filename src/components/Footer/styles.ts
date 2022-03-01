@@ -27,6 +27,7 @@ export const Content = styled.footer`
 
   & > svg {
     grid-area: Logo;
+    max-width: 100%;
   }
 `;
 
