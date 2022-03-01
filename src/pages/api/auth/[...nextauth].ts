@@ -58,6 +58,7 @@ export default NextAuth({
     },
     async signIn({ user, profile }) {
       const { email } = user;
+      console.log(user);
       const { id, organizations_url } = profile as GitHubProfile;
 
       const { data: organizationsData } = await axios.get(organizations_url);

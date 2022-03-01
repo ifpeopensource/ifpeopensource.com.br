@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.footer`
-  max-width: 1088px;
+  max-width: 100%;
 
   margin: 0 auto;
   padding: 32px 8px;
@@ -27,6 +27,7 @@ export const Content = styled.footer`
 
   & > svg {
     grid-area: Logo;
+    max-width: 100%;
   }
 `;
 
