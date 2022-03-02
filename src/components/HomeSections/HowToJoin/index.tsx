@@ -1,10 +1,10 @@
 import Section from '../Section';
-import { Description, Title } from '../../styles/sections';
+import { Description, Title } from '../../../styles/sections';
 
 import { Container, Button } from './styles';
 
 const HowToJoin: React.FC = () => (
-  <Section accent>
+  <Section>
     <Title>Como participar?</Title>
     <Container>
       <div>

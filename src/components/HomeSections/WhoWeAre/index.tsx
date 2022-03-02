@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import Section from '../Section';
-import { Description, Title } from '../../styles/sections';
+import { Description, Title } from '../../../styles/sections';
 import ReadMoreModal from './ReadMoreModal';
 
-import { useScrollBlock } from '../../hooks/useScrollBlock';
+import { useScrollBlock } from '../../../hooks/useScrollBlock';
 
 import { ReadMoreButton } from './styles';
 
@@ -20,7 +20,7 @@ const WhoWeAre: React.FC = () => {
     setModal(!modal);
   }
   return (
-    <Section>
+    <Section accent>
       <Title>Quem somos?</Title>
       <Description style={{ textIndent: '2.5rem' }}>
         Somos uma comunidade de alunos interessados em computação, programação,

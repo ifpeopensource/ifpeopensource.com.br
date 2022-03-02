@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components';
-import { darkTheme } from '../../styles/theme';
+import { darkTheme } from '../../../styles/theme';
 
 export const Container = styled.div`
   width: 100vw;

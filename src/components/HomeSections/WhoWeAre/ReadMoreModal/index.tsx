@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import Modal from 'react-modal';
 import { ThemeContext } from 'styled-components';
 
-import { Bold } from '../../../styles/sections';
+import { Bold } from '../../../../styles/sections';
 import {
   ModalCloseIcon,
   ModalText,

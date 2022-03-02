@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Section from '../Section';
-import { Title, Description } from '../../styles/sections';
+import { Title, Description } from '../../../styles/sections';
 import { ProjectList, ShowMoreButton } from './styles';
 import ProjectCard from './ProjectCard';
 

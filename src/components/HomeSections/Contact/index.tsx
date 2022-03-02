@@ -2,7 +2,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 import Section from '../Section';
-import { Title } from '../../styles/sections';
+import { Title } from '../../../styles/sections';
 
 import { MessageField, SubjectField, SendButton, ContactForm } from './styles';
 
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Section accent>
+    <Section>
       <Title>Contato</Title>
       <ContactForm onSubmit={(e) => handleSubmit(e)}>
         <SubjectField

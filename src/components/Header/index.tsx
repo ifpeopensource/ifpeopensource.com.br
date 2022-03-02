@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState, RefObject } from 'react';
 import ThemeToggler from 'react-toggle';
 import { DefaultTheme, ThemeContext } from 'styled-components';
+import Link from 'next/link';
 
 import { darkTheme, lightTheme } from '../../styles/theme';
 
@@ -9,12 +10,13 @@ import { Container, Content, Logo } from './styles';
 
 interface HeaderProps {
   setTheme(theme: DefaultTheme): void;
+  isHomePage?: boolean;
   ref?: RefObject<HTMLDivElement>;
 }
 
-const Header: React.FC<HeaderProps> = ({ setTheme }) => {
+const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
   const [actualTheme, setActualTheme] = useState(useContext(ThemeContext));
-  const [pageTop, setPageTop] = useState(true);
+  const [pageTop, setPageTop] = useState(isHomePage);
 
   function changeTheme() {
     if (actualTheme === darkTheme) {
@@ -35,8 +37,10 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
   }
 
   useEffect(() => {
-    setPageTop(window.pageYOffset < 0.75 * window.innerHeight);
-    window.addEventListener('scroll', handleScroll);
+    if (isHomePage) {
+      setPageTop(window.pageYOffset < 0.75 * window.innerHeight);
+      window.addEventListener('scroll', handleScroll);
+    }
   }, []);
 
   return (
@@ -48,25 +52,29 @@ const Header: React.FC<HeaderProps> = ({ setTheme }) => {
       className={pageTop ? 'pageTop' : ''}
     >
       <Content className={pageTop ? 'pageTop' : ''}>
-        {actualTheme === darkTheme ? (
-          <Logo
-            src="/assets/images/logo-light.svg"
-            key={actualTheme.body}
-            alt="IFPE Open Source"
-            width={139}
-            height={47}
-            className={pageTop ? 'pageTop' : ''}
-          />
-        ) : (
-          <Logo
-            src="/assets/images/logo-dark.svg"
-            key={actualTheme.body}
-            alt="IFPE Open Source"
-            width={139}
-            height={47}
-            className={pageTop ? 'pageTop' : ''}
-          />
-        )}
+        <Link href="/">
+          <a style={isHomePage && { pointerEvents: 'none' }}>
+            {actualTheme === darkTheme ? (
+              <Logo
+                src="/assets/images/logo-light.svg"
+                key={actualTheme.body}
+                alt="IFPE Open Source"
+                width={139}
+                height={47}
+                className={pageTop ? 'pageTop' : ''}
+              />
+            ) : (
+              <Logo
+                src="/assets/images/logo-dark.svg"
+                key={actualTheme.body}
+                alt="IFPE Open Source"
+                width={139}
+                height={47}
+                className={pageTop ? 'pageTop' : ''}
+              />
+            )}
+          </a>
+        </Link>
         <ThemeToggler
           defaultChecked
           onChange={changeTheme}
