@@ -2,9 +2,11 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 import { query as q } from 'faunadb';
 
+import { withSentry } from '@sentry/nextjs';
+
 import { fauna } from '../../services/fauna';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'DELETE') {
     res.setHeader('Allow', 'DELETE');
     res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -27,5 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (error) {
     res.status(500).end(error.message);
   }
-  return res.status(204).end();
-};
+  res.status(204).end();
+}
+
+export default withSentry(handler);
