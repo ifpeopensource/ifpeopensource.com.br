@@ -37,6 +37,13 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "implicit-arrow-linebreak": "off",
     "comma-dangle": "off",
     "import/prefer-default-export": "off",
