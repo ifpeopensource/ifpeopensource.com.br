@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -34,6 +35,21 @@ const MyApp: React.FC<AppProps> = ({
         </Head>
         <Component {...pageProps} setTheme={setTheme} />
         <GlobalStyle />
+
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G8P48ED1PV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-G8P48ED1PV');
+            `}
+        </Script>
       </ThemeProvider>
     </SessionProvider>
   );
