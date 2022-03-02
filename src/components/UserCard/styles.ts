@@ -8,7 +8,7 @@ export const Card = styled.div`
   align-items: center;
   justify-content: center;
 
-  max-width: 500px;
+  max-width: 768px;
   padding: 2rem;
   border-radius: 0.5rem;
 `;
