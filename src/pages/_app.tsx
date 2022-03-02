@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -7,7 +8,6 @@ import GlobalStyle from '../styles/global';
 import { darkTheme } from '../styles/theme';
 
 import '../styles/modalAnimation.css';
-import { SessionProvider } from 'next-auth/react';
 
 const MyApp: React.FC<AppProps> = ({
   Component,

@@ -70,10 +70,13 @@ const ReadMoreModal: React.FC<ModalProps> = ({
       <ModalText>
         Como você pode ter entendido na seção acima, comunidades são inerentes
         ao conceito de open source. E é assim que as comunidades open source
-        surgem: diversas <Bold>pessoas interessadas e apaixonadas por tecnologia e
-        resolver problemas reais - tudo da forma mais livre possível.</Bold> Essas
-        comunidades se organizam em um ou mais projetos, sugerindo mudanças,
-        discutindo melhorias e adicionando funcionalidades.
+        surgem: diversas{' '}
+        <Bold>
+          pessoas interessadas e apaixonadas por tecnologia e resolver problemas
+          reais - tudo da forma mais livre possível.
+        </Bold>{' '}
+        Essas comunidades se organizam em um ou mais projetos, sugerindo
+        mudanças, discutindo melhorias e adicionando funcionalidades.
       </ModalText>
       <ModalText>
         Em 1991, Linus Torvalds - na época, um estudante da Universidade de
@@ -84,12 +87,12 @@ const ReadMoreModal: React.FC<ModalProps> = ({
         código do maior projeto open source do mundo, o Linux. Hoje, o Linux é
         um dos maiores sistemas operacionais do mundo, impactando a vida de
         bilhões de pessoas; você pode nem saber, mas já usa Linux, já que o
-        Android é baseado em Linux. Também pode se dizer que o Linux
-        “roda a internet”, já que a esmagadora maioria dos servidores que
-        hospedam sites e aplicativos usam Linux. Esta breve história é só
-        um dos incríveis casos de sucesso que também acontecem com diversas
-        outras comunidades que são apoiadas por empresas como Google,
-        Microsoft, Apple e outras gigantes da tecnologia.
+        Android é baseado em Linux. Também pode se dizer que o Linux “roda a
+        internet”, já que a esmagadora maioria dos servidores que hospedam sites
+        e aplicativos usam Linux. Esta breve história é só um dos incríveis
+        casos de sucesso que também acontecem com diversas outras comunidades
+        que são apoiadas por empresas como Google, Microsoft, Apple e outras
+        gigantes da tecnologia.
       </ModalText>
       <ModalText>
         Nós reconhecemos o{' '}

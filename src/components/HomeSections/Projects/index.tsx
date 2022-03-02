@@ -21,7 +21,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
     <Description style={{ textIndent: '2.5rem', marginBottom: '0.5rem' }}>
       A comunidade se organiza por meio de projetos relacionados a programação,
       cultura maker, entre outros. Você pode utilizar e contribuir para os
-      projetos livremente, como também pode criar um novo e contribuir ainda mais para a comunidade.
+      projetos livremente, como também pode criar um novo e contribuir ainda
+      mais para a comunidade.
     </Description>
     <Description style={{ textIndent: '2.5rem' }}>
       Veja alguns dos projetos que a comunidade desenvolve atualmente:

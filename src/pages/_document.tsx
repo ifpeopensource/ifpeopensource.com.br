@@ -71,10 +71,7 @@ export default class MyDocument extends Document {
           {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="pt_BR" />
-          <meta
-            property="og:url"
-            content="https://ifpeopensource.com.br/"
-          />
+          <meta property="og:url" content="https://ifpeopensource.com.br/" />
           <meta
             property="og:title"
             content="IFPE Open Source | Comunidade open source do IFPE"

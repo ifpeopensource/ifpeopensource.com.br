@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 interface ButtonProps {
   isSignedIn: boolean;
-  theme: any;
+  theme: {
+    primary: string;
+  };
 }
 
 export const Button = styled.button.attrs((props: ButtonProps) => ({

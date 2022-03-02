@@ -79,8 +79,8 @@ export const ImageButton = styled.a`
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
   }
 
-  & > img {
-    width: 56px;    
+  img {
+    width: 56px;
     border-radius: 8px;
   }
 `;

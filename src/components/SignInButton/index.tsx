@@ -12,8 +12,8 @@ const SignInButton: React.FC<SignInButtonProps> = ({
   isSignedIn,
   signIn,
   signOut,
-}) => {
-  return isSignedIn ? (
+}) =>
+  isSignedIn ? (
     <Button onClick={signOut} isSignedIn={isSignedIn}>
       <FaGithub />
       Desconectar-se
@@ -24,6 +24,5 @@ const SignInButton: React.FC<SignInButtonProps> = ({
       Entrar com o GitHub
     </Button>
   );
-};
 
 export default SignInButton;

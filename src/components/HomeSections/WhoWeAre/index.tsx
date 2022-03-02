@@ -13,12 +13,17 @@ const WhoWeAre: React.FC = () => {
   const [blockScroll, allowScroll] = useScrollBlock();
 
   useEffect(() => {
-    modal ? blockScroll(document) : allowScroll(document);
+    if (modal) {
+      blockScroll(document);
+    } else {
+      allowScroll(document);
+    }
   }, [modal]);
 
-  function toggleModal() {
+  const toggleModal = () => {
     setModal(!modal);
-  }
+  };
+
   return (
     <Section accent>
       <Title>Quem somos?</Title>
@@ -27,8 +32,8 @@ const WhoWeAre: React.FC = () => {
         cultura maker e tecnologia em geral que promove projetos onde podemos
         aproveitar o enorme potencial que a comunidade de alunos do IFPE tem de
         usar a tecnologia para criar soluções e compartilhá-las com os outros
-        para modificar e melhorar o nosso ambiente. Junto a isso, levamos todo
-        o conhecimento, experiência e networking que uma comunidade desse tipo
+        para modificar e melhorar o nosso ambiente. Junto a isso, levamos todo o
+        conhecimento, experiência e networking que uma comunidade desse tipo
         pode proporcionar.
       </Description>
       <ReadMoreButton onClick={toggleModal}>Ler mais</ReadMoreButton>

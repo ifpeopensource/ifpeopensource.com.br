@@ -66,13 +66,14 @@ export default NextAuth({
         }
       );
 
-      const email = emails.filter((data: GithubUserEmail) => {
-        return !!data.primary;
-      })[0].email;
+      const { email } = emails.filter(
+        (data: GithubUserEmail) => !!data.primary
+      )[0];
 
-      const { id, organizations_url } = profile as GitHubProfile;
+      const { id, organizations_url: organizationsUrl } =
+        profile as GitHubProfile;
 
-      const { data: organizationsData } = await axios.get(organizations_url);
+      const { data: organizationsData } = await axios.get(organizationsUrl);
 
       const isMember = organizationsData.filter(
         (organization: GitHubOrganization) =>
