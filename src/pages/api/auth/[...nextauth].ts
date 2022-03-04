@@ -3,6 +3,8 @@ import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
 
+import { withSentry } from '@sentry/nextjs';
+
 import ghApi from '../../../services/api';
 import { fauna } from '../../../services/fauna';
 import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
@@ -25,7 +27,7 @@ interface GithubUserEmail {
   primary: boolean;
 }
 
-export default NextAuth({
+const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GitHubProvider({
@@ -121,3 +123,5 @@ export default NextAuth({
     },
   },
 });
+
+export default withSentry(handler);

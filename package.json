@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.7.2",
+    "@sentry/nextjs": "^6.18.1",
     "axios": "^0.26.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "faunadb": "^4.5.2",
