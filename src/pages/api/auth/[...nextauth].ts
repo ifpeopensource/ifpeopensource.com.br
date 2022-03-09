@@ -72,20 +72,15 @@ const handler = NextAuth({
         return !!data.primary;
       })[0].email;
 
-      const { id, organizations_url } = profile as GitHubProfile;
+      const { id, login } = profile as GitHubProfile;
 
-      const { data: organizationsData } = await axios.get(organizations_url, {
+      const { status } = await ghApi.get(`/orgs/ifpeopensource/members/${login}`, {
         headers: {
           Authorization: `Bearer ${account.access_token}`,
         },
       });
 
-      const isMember = organizationsData.filter(
-        (organization: GitHubOrganization) =>
-          organization.id.toString() === process.env.GH_ORG_ID
-      );
-
-      if (isMember.length === 0) {
+      if (status !== 204) {
         return false;
       }
 
