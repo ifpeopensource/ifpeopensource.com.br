@@ -74,14 +74,18 @@ const handler = NextAuth({
 
       const { id, organizations_url } = profile as GitHubProfile;
 
-      const { data: organizationsData } = await axios.get(organizations_url);
+      const { data: organizationsData } = await axios.get(organizations_url, {
+        headers: {
+          Authorization: `Bearer ${account.access_token}`,
+        },
+      });
 
       const isMember = organizationsData.filter(
         (organization: GitHubOrganization) =>
           organization.id.toString() === process.env.GH_ORG_ID
       );
 
-      if (!isMember) {
+      if (isMember.length === 0) {
         return false;
       }
 
