@@ -3,6 +3,8 @@ import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
 
+import { withSentry } from '@sentry/nextjs';
+
 import ghApi from '../../../services/api';
 import { fauna } from '../../../services/fauna';
 import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
@@ -25,7 +27,7 @@ interface GithubUserEmail {
   primary: boolean;
 }
 
-export default NextAuth({
+const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GitHubProvider({
@@ -70,17 +72,16 @@ export default NextAuth({
         (data: GithubUserEmail) => !!data.primary
       )[0];
 
-      const { id, organizations_url: organizationsUrl } =
-        profile as GitHubProfile;
 
-      const { data: organizationsData } = await axios.get(organizationsUrl);
+      const { id, login } = profile as GitHubProfile;
 
-      const isMember = organizationsData.filter(
-        (organization: GitHubOrganization) =>
-          organization.id.toString() === process.env.GH_ORG_ID
-      );
+      const { status } = await ghApi.get(`/orgs/ifpeopensource/members/${login}`, {
+        headers: {
+          Authorization: `Bearer ${account.access_token}`,
+        },
+      });
 
-      if (!isMember) {
+      if (status !== 204) {
         return false;
       }
 
@@ -122,3 +123,5 @@ export default NextAuth({
     },
   },
 });
+
+export default withSentry(handler);
