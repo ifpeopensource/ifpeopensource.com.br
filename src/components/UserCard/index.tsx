@@ -12,6 +12,7 @@ import {
 import getRandomArrayItems from '../../util/getRandomArrayItems';
 
 import teamsConfig from '../../../teams.json';
+
 interface UserCardProps {
   user: {
     avatarUrl: string;
@@ -36,7 +37,7 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
       </GhUserContainer>
       <GroupsContainer>
         {isShort
-          ? (function () {
+          ? (function getRandomTeams() {
               const randomTeams = getRandomArrayItems(user.teams, 2);
               return [
                 !!randomTeams[0] && (
@@ -79,6 +80,10 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
       </GroupsContainer>
     </Card>
   );
+};
+
+UserCard.defaultProps = {
+  isShort: false,
 };
 
 export default UserCard;

@@ -18,10 +18,6 @@ interface GitHubProfile extends Profile {
   organizations_url: string;
 }
 
-interface GitHubOrganization {
-  id: number;
-}
-
 interface GithubUserEmail {
   email: string;
   primary: boolean;
@@ -68,17 +64,20 @@ const handler = NextAuth({
         }
       );
 
-      const email = emails.filter((data: GithubUserEmail) => {
-        return !!data.primary;
-      })[0].email;
+      const { email } = emails.filter(
+        (data: GithubUserEmail) => !!data.primary
+      )[0];
 
       const { id, login } = profile as GitHubProfile;
 
-      const { status } = await ghApi.get(`/orgs/ifpeopensource/members/${login}`, {
-        headers: {
-          Authorization: `Bearer ${account.access_token}`,
-        },
-      });
+      const { status } = await ghApi.get(
+        `/orgs/ifpeopensource/members/${login}`,
+        {
+          headers: {
+            Authorization: `Bearer ${account.access_token}`,
+          },
+        }
+      );
 
       if (status !== 204) {
         return false;

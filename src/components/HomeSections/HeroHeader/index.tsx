@@ -13,7 +13,8 @@ const HeroHeader: React.FC = () => {
     <Container theme={actualTheme}>
       <Content>
         <Text>
-          Comunidade de tecnologia e computação do Instituto Federal de Pernambuco
+          Comunidade de tecnologia e computação do Instituto Federal de
+          Pernambuco
         </Text>
 
         <Link href="https://github.com/ifpeopensource/" passHref>

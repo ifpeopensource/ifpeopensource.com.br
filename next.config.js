@@ -4,7 +4,11 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const moduleExports = {
   esModule: true,
   images: {
-    domains: ['images.unsplash.com', 'raw.githubusercontent.com'],
+    domains: [
+      'images.unsplash.com',
+      'raw.githubusercontent.com',
+      'assets.hackclub.com',
+    ],
   },
 };
 

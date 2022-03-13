@@ -33,17 +33,17 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
 
   const [isDeleteCardModalOpen, setIsDeleteCardModalOpen] = useState(false);
 
-  function toggleDeleteCardModal() {
+  const toggleDeleteCardModal = () => {
     setIsDeleteCardModalOpen(!isDeleteCardModalOpen);
-  }
+  };
 
-  async function deleteCard() {
+  const deleteCard = async () => {
     axios.delete(`/api/delete-card`).then((res) => {
       if (res.status === 204) {
         signOut();
       }
     });
-  }
+  };
 
   if (status === 'authenticated') {
     return (
@@ -69,7 +69,9 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
             signOut={signOut}
           />
           <span className="deleteCard">
-            <a onClick={toggleDeleteCardModal}>Apagar card</a>
+            <button type="button" onClick={toggleDeleteCardModal}>
+              Apagar card
+            </button>
           </span>
         </Content>
         <DeleteCardModal
@@ -80,27 +82,26 @@ const Member: React.FC<MemberProps> = ({ setTheme }) => {
         />
       </Container>
     );
-  } else {
-    return (
-      <Container>
-        <Head>
-          <title>Crie seu card | IFPE Open Source</title>
-        </Head>
-
-        <Header setTheme={setTheme} />
-        <Content>
-          {status === 'loading' ? (
-            <ClipLoader color={theme.primary}/>
-          ) : (
-            <>
-              <p>Para criar seu card de membro, faça login com seu GitHub</p>
-              <SignInButton signIn={() => signIn('github')} signOut={signOut} />
-            </>
-          )}
-        </Content>
-      </Container>
-    );
   }
+  return (
+    <Container>
+      <Head>
+        <title>Crie seu card | IFPE Open Source</title>
+      </Head>
+
+      <Header setTheme={setTheme} />
+      <Content>
+        {status === 'loading' ? (
+          <ClipLoader color={theme.primary} />
+        ) : (
+          <>
+            <p>Para criar seu card de membro, faça login com seu GitHub</p>
+            <SignInButton signIn={() => signIn('github')} signOut={signOut} />
+          </>
+        )}
+      </Content>
+    </Container>
+  );
 };
 
 export default Member;
