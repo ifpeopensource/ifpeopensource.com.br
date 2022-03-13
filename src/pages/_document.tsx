@@ -71,10 +71,7 @@ export default class MyDocument extends Document {
           {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="pt_BR" />
-          <meta
-            property="og:url"
-            content="https://ifpeopensource.com.br/"
-          />
+          <meta property="og:url" content="https://ifpeopensource.com.br/" />
           <meta
             property="og:title"
             content="IFPE Open Source | Comunidade open source do IFPE"
@@ -125,24 +122,6 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
-
-          {/* <!--  Global site tag (gtag.js) - Google Analytics  -> */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-          />
-          <script
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-EHL16L8N6S');
-              `,
-            }}
-          />
         </Head>
         <body>
           <Main />

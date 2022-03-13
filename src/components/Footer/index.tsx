@@ -9,6 +9,7 @@ import {
 import { FiMail as EmailIcon } from 'react-icons/fi';
 import Link from 'next/link';
 
+import Image from 'next/image';
 import { darkTheme } from '../../styles/theme';
 
 import SocialButton from './SocialButton';
@@ -25,9 +26,18 @@ const Footer: React.FC = () => {
       <Content>
         {actualTheme === darkTheme ? <LogoLight /> : <LogoDark />}
         <Social>
-          <Link href={"https://hackclub.com"} passHref>
-            <ImageButton aria-label="Hack Club" target="_blank" rel="noopener noreferrer">
-              <img src="https://assets.hackclub.com/icon-square.svg" alt="Hack Club" />
+          <Link href="https://hackclub.com" passHref>
+            <ImageButton
+              aria-label="Hack Club"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="https://assets.hackclub.com/icon-square.svg"
+                width={56}
+                height={56}
+                alt="Hack Club"
+              />
             </ImageButton>
           </Link>
           <SocialButton

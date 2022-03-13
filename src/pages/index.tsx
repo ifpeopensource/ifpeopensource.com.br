@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { DefaultTheme } from 'styled-components';
@@ -65,29 +64,27 @@ interface FaunaQuery {
 export async function getStaticProps(): Promise<IStaticProps> {
   const projects = randomProjects(projectList);
 
-  let members = [];
-  try {
-    let { data: faunaMembers }: FaunaQuery = await fauna.query(
-      q.Map(
-        q.Paginate(Documents(Collection('members'))),
-        q.Lambda((member) => q.Select(['data'], q.Get(member)))
-      )
-    );
+  const members = [];
+  let { data: faunaMembers }: FaunaQuery = await fauna.query(
+    q.Map(
+      q.Paginate(Documents(Collection('members'))),
+      q.Lambda((member) => q.Select(['data'], q.Get(member)))
+    )
+  );
 
-    faunaMembers = getRandomArrayItems(faunaMembers, 3);
+  faunaMembers = getRandomArrayItems(faunaMembers, 3);
 
-    for (let faunaMember of faunaMembers) {
-      const { data } = await ghApi.get(`/user/${faunaMember.gh_id}`);
+  // eslint-disable-next-line no-restricted-syntax
+  for (const faunaMember of faunaMembers) {
+    // eslint-disable-next-line no-await-in-loop
+    const { data } = await ghApi.get(`/user/${faunaMember.gh_id}`);
 
-      members.push({
-        avatarUrl: data.avatar_url,
-        name: data.name,
-        ghUsername: data.login,
-        teams: faunaMember.user_teams,
-      });
-    }
-  } catch (error) {
-    throw error;
+    members.push({
+      avatarUrl: data.avatar_url,
+      name: data.name,
+      ghUsername: data.login,
+      teams: faunaMember.user_teams,
+    });
   }
 
   return {

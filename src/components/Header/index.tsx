@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
   const [actualTheme, setActualTheme] = useState(useContext(ThemeContext));
   const [pageTop, setPageTop] = useState(isHomePage);
 
-  function changeTheme() {
+  const changeTheme = () => {
     if (actualTheme === darkTheme) {
       setTheme(lightTheme);
       setActualTheme(lightTheme);
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
       setTheme(darkTheme);
       setActualTheme(darkTheme);
     }
-  }
+  };
 
   function handleScroll() {
     if (window.pageYOffset < 0.75 * window.innerHeight) {
@@ -52,7 +52,8 @@ const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
       className={pageTop ? 'pageTop' : ''}
     >
       <Content className={pageTop ? 'pageTop' : ''}>
-        <Link href="/">
+        <Link href="/" passHref>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a style={isHomePage && { pointerEvents: 'none' }}>
             {actualTheme === darkTheme ? (
               <Logo
