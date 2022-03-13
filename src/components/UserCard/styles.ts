@@ -24,6 +24,7 @@ export const GhUserContainer = styled.div`
   a {
     text-decoration: none;
     color: #fafafa;
+    text-align: center;
   }
 `;
 

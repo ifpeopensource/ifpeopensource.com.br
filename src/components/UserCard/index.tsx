@@ -38,7 +38,8 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
       <UserAvatar src={user.avatarUrl} />
       <UserName>{user.name}</UserName>
       <GhUserContainer>
-        <FaGithub size={20} /> <a href={userLink()}>{user.ghUsername}</a>
+        <a href={userLink()}><FaGithub size={20} /> </a>
+        <a href={userLink()}>{user.ghUsername}</a>
       </GhUserContainer>
       <GroupsContainer>
         {isShort
