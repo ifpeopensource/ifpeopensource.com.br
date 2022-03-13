@@ -13,19 +13,16 @@ export const Card = styled.div`
   border-radius: 0.5rem;
 `;
 
-export const GhUserContainer = styled.div`
+export const GhUserContainer = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
 
   gap: 0.25rem;
   margin-top: 0.5rem;
-
-  a {
-    text-decoration: none;
-    color: #fafafa;
-    text-align: center;
-  }
+  text-decoration: none;
+  color: #fafafa;
+  text-align: center;
 `;
 
 export const UserAvatar = styled.img`
