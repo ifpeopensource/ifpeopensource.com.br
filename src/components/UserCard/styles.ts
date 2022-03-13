@@ -20,6 +20,11 @@ export const GhUserContainer = styled.div`
 
   gap: 0.25rem;
   margin-top: 0.5rem;
+
+  a {
+    text-decoration: none;
+    color: #fafafa;
+  }
 `;
 
 export const UserAvatar = styled.img`

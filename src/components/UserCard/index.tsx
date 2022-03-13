@@ -28,12 +28,17 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
     return `#${Math.random().toString(16).slice(-6)}`;
   }
 
+  function userLink(){	
+    var userLink  = user.ghUsername;
+    return "https://github.com/" + userLink;
+  }
+
   return (
     <Card>
       <UserAvatar src={user.avatarUrl} />
       <UserName>{user.name}</UserName>
       <GhUserContainer>
-        <FaGithub size={20} /> <span>{user.ghUsername}</span>
+        <FaGithub size={20} /> <a href={userLink()}>{user.ghUsername}</a>
       </GhUserContainer>
       <GroupsContainer>
         {isShort
