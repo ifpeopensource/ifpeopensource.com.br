@@ -34,7 +34,7 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
       <UserName>{user.name}</UserName>
       <GhUserContainer href={`https://github.com/${user.ghUsername}`}>
         <FaGithub size={20} />
-        <a>{user.ghUsername}</a>
+        <span>{user.ghUsername}</span>
       </GhUserContainer>
       <GroupsContainer>
         {isShort
