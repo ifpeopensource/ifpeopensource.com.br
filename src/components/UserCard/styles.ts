@@ -22,7 +22,6 @@ export const GhUserContainer = styled.a`
   margin-top: 0.5rem;
   text-decoration: none;
   color: #fafafa;
-  text-align: center;
 `;
 
 export const UserAvatar = styled.img`
