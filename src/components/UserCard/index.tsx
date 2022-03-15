@@ -32,7 +32,7 @@ const UserCard: React.FC<UserCardProps> = ({ user, isShort }) => {
     <Card>
       <UserAvatar src={user.avatarUrl} />
       <UserName>{user.name}</UserName>
-      <GhUserContainer href={`https://github.com/${user.ghUsername}`}>
+      <GhUserContainer href={`https://github.com/${user.ghUsername}`} target="_blank" rel="noopener noreferrer">
         <FaGithub size={20} />
         <span>{user.ghUsername}</span>
       </GhUserContainer>
