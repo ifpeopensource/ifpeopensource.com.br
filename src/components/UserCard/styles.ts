@@ -21,7 +21,7 @@ export const GhUserContainer = styled.a`
   gap: 0.25rem;
   margin-top: 0.5rem;
   text-decoration: none;
-  color: #fafafa;
+  color: inherit;
 `;
 
 export const UserAvatar = styled.img`
