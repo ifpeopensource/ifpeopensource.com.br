@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
+    "eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\""
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.7.2",
