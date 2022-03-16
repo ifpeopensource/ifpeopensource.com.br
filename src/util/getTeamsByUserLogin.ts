@@ -8,7 +8,7 @@ interface Team {
 export default async function getTeamsByUserId(userId: number) {
   const { data: teams } = await ghApi.get('/orgs/ifpeopensource/teams');
 
-  let userTeamsNames: string[] = [];
+  const userTeamsNames: string[] = [];
 
   await Promise.all(
     teams.map(async ({ id, name }: Team) => {
@@ -16,6 +16,7 @@ export default async function getTeamsByUserId(userId: number) {
         `organizations/${process.env.GH_ORG_ID}/team/${id}/members`
       );
 
+      // eslint-disable-next-line no-restricted-syntax
       for (const member of teamMembers) {
         if (member.id === userId) {
           userTeamsNames.push(name);
