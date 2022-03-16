@@ -2,9 +2,9 @@ name: Lint
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   lint:
@@ -13,16 +13,19 @@ jobs:
 
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
-      
+        uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16.x"
+          node-version: '16.x'
           cache: 'yarn'
-          
+
       - name: Install dependencies
-        uses: Borales/actions-yarn@v2.3.0
-        
+        run: yarn install
+
+      - name: Run Next Lint
+        run: yarn lint
+
       - name: Run ESLint
         run: yarn eslint
