@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
 // Based on https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
-export default function getRandomArrayItems(array: unknown[], amount: number) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function getRandomArrayItems(array: any[], amount: number) {
   let currentIndex = array.length;
   let randomIndex: number;
 
