@@ -2,15 +2,14 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true,
-    "jest": true
+    "node": true
   },
   "extends": [
     "plugin:react/recommended",
+    "plugin:@next/next/recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:@next/next/recommended"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -42,6 +41,13 @@
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": [
+      "error",
+      {
+        "ignoreFunctionalComponents": true
       }
     ],
     "implicit-arrow-linebreak": "off",
