@@ -87,7 +87,7 @@ const ReadMoreModal: React.FC<ModalProps> = ({
         código do maior projeto open source do mundo, o Linux. Hoje, o Linux é
         um dos maiores sistemas operacionais do mundo, impactando a vida de
         bilhões de pessoas; você pode nem saber, mas provavelmente usa ou já
-        usou Linux, já que softwares como o Android são baseado em Linux. Também
+        usou Linux, já que softwares como o Android são baseados em Linux. Também
         pode se dizer que o Linux “roda a internet”, já que a esmagadora maioria
         dos servidores que hospedam sites e aplicativos usam Linux. Esta breve
         história é só um dos incríveis casos de sucesso que também acontecem com
