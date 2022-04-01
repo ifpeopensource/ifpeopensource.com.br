@@ -13,13 +13,15 @@ export const Card = styled.div`
   border-radius: 0.5rem;
 `;
 
-export const GhUserContainer = styled.div`
+export const GhUserContainer = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
 
   gap: 0.25rem;
   margin-top: 0.5rem;
+  text-decoration: none;
+  color: inherit;
 `;
 
 export const UserAvatar = styled.img`
