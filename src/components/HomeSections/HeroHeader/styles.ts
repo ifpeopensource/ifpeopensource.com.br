@@ -10,9 +10,9 @@ export const Container = styled.div`
   display: flex;
 
   background: ${(props) =>
-    (props.theme === darkTheme
-      ? 'linear-gradient(90deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.46) 100%)'
-      : 'linear-gradient(90deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.25) 100%)')},
+      props.theme === darkTheme
+        ? 'linear-gradient(90deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.46) 100%)'
+        : 'linear-gradient(90deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.25) 100%)'},
     url('/assets/images/IFPE-Light.jpg') no-repeat;
   background-size: cover;
   background-position: bottom;
