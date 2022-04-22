@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  checks: write
+  contents: write
+
 jobs:
   lint:
     name: Lint code
@@ -24,8 +28,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run Next Lint
-        run: yarn lint
-
-      - name: Run ESLint
-        run: yarn eslint
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          auto_fix: true
+          eslint: true
+          prettier: true
