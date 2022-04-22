@@ -1,0 +1,23 @@
+name: Marca issues e pull requests como stale
+
+on:
+  schedule:
+  - cron: '00 03 * * *'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-close: 15
+        stale-issue-message: 'Esta issue foi automaticamente marcada como stale pois não teve atividade recente. Ela será fechada caso não ocorra nenhuma outra atividade. Obrigado por sua contribuição!'
+        stale-pr-message: 'Esta pull request foi automaticamente marcada como stale pois não teve atividade recente. Ela será fechada caso não ocorra nenhuma outra atividade. Obrigado por sua contribuição!'
+        exempt-issue-labels: No stale
+        exempt-pr-labels: No stale

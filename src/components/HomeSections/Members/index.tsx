@@ -24,7 +24,7 @@ const Members: React.FC<MembersProps> = ({ members }) => (
     </Description>
     <MemberList>
       {members.map((member) => (
-        <UserCard key={member.ghUsername} user={member} isShort />
+        <UserCard key={member.ghUsername} user={member} />
       ))}
     </MemberList>
     <Link href="/member" passHref>

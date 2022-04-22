@@ -83,7 +83,7 @@ export async function getStaticProps(): Promise<IStaticProps> {
       avatarUrl: data.avatar_url,
       name: data.name,
       ghUsername: data.login,
-      teams: faunaMember.user_teams,
+      teams: getRandomArrayItems(faunaMember.user_teams, 2),
     });
   }
 

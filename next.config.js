@@ -3,6 +3,10 @@ const { withSentryConfig } = require('@sentry/nextjs');
 
 const moduleExports = {
   esModule: true,
+  reactStrictMode: true,
+  eslint: {
+    dirs: ['src'],
+  },
   images: {
     domains: [
       'images.unsplash.com',
