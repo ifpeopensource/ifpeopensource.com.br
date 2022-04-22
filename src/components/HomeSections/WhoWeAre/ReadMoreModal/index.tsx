@@ -51,10 +51,10 @@ const ReadMoreModal: React.FC<ModalProps> = ({
       <ModalText>
         O termo “open source” significa literalmente “código aberto”. Um código
         ou software open source pode ser usado, copiado, modificado, estudado e
-        redistribuído sem nenhuma restrição. O software do aplicativo Zoom, por
-        exemplo, é fechado, pois não podemos ver seu código-fonte; já outros
+        redistribuído de acordo com sua licença. O software do aplicativo Zoom,
+        por exemplo, é fechado, pois não podemos ver seu código-fonte; já outros
         softwares como o Firefox, OBS, Blender, VLC, entre outros, possuem seu
-        código fonte aberto.
+        código-fonte aberto.
       </ModalText>
       <ModalText>
         Já ficou curioso sobre como um aplicativo, software ou site funciona? Se
@@ -86,13 +86,13 @@ const ReadMoreModal: React.FC<ModalProps> = ({
         se tornaram, quase 30 anos depois, em mais de 23,3 milhões de linhas de
         código do maior projeto open source do mundo, o Linux. Hoje, o Linux é
         um dos maiores sistemas operacionais do mundo, impactando a vida de
-        bilhões de pessoas; você pode nem saber, mas já usa Linux, já que o
-        Android é baseado em Linux. Também pode se dizer que o Linux “roda a
-        internet”, já que a esmagadora maioria dos servidores que hospedam sites
-        e aplicativos usam Linux. Esta breve história é só um dos incríveis
-        casos de sucesso que também acontecem com diversas outras comunidades
-        que são apoiadas por empresas como Google, Microsoft, Apple e outras
-        gigantes da tecnologia.
+        bilhões de pessoas; você pode nem saber, mas provavelmente usa ou já
+        usou Linux, já que softwares como o Android são baseados em Linux.
+        Também pode se dizer que o Linux “roda a internet”, já que a esmagadora
+        maioria dos servidores que hospedam sites e aplicativos usam Linux. Esta
+        breve história é só um dos incríveis casos de sucesso que também
+        acontecem com diversas outras comunidades que são apoiadas por empresas
+        como Google, Microsoft, Apple e outras gigantes da tecnologia.
       </ModalText>
       <ModalText>
         Nós reconhecemos o{' '}
