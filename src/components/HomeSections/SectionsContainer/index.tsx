@@ -1,6 +1,10 @@
 import { Container } from './styles';
 
-const SectionsContainer: React.FC = ({ children }) => (
+interface SectionsContainerProps {
+  children: React.ReactNode;
+}
+
+const SectionsContainer: React.FC<SectionsContainerProps> = ({ children }) => (
   <Container>{children}</Container>
 );
 
