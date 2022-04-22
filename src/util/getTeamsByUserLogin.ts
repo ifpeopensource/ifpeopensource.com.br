@@ -8,7 +8,7 @@ interface Team {
 export default async function getTeamsByUserId(userId: number) {
   const { data: teams } = await ghApi.get('/orgs/ifpeopensource/teams');
 
-  let userTeamsNames: string[] = [];
+  const userTeamsNames: string[] = [];
 
   await Promise.all(
     teams.map(async ({ id, name }: Team) => {
