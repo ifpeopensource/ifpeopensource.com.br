@@ -3,8 +3,13 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   background: ${({ theme }) => `${theme.header}CC`};
-  backdrop-filter: blur(10px);
   max-width: 100%;
+
+  backdrop-filter: blur(10px);
+  /* Se o browser não suportar a propriedade backdrop-filter | If the browser does not support backdrop-filter property */
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background: ${({ theme }) => `${theme.header}F5`};
+  }
 
   position: sticky;
   top: 0;
@@ -40,9 +45,15 @@ export const Content = styled.div`
     padding: 16px 16px;
   }
 
+  @supports not (zoom: 1.2) {
+    @media (min-width: 1024px) {
+      height: 5.7rem;
+    }
+  }
+
   /**
-    As propriedades a seguir foram copiadas do tema padrão da biblioteca react-toggle.
-    Para mais informações, veja: https://github.com/aaronshaf/react-toggle
+  As propriedades a seguir foram copiadas do tema padrão da biblioteca react-toggle.
+  Para mais informações, veja: https://github.com/aaronshaf/react-toggle
   */
 
   .react-toggle {
@@ -55,6 +66,10 @@ export const Content = styled.div`
     border: 0;
     padding: 0;
     zoom: 1.3;
+
+    @supports not (zoom: 1.3) {
+      transform: scale(1.3);
+    }
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -182,9 +197,15 @@ export const Content = styled.div`
 
 export const Logo = styled.img`
   overflow: visible;
+  transform-origin: top left;
 
   @media (min-width: 1024px) {
     zoom: 1.2;
+
+    /* Se o browser não suportar a propriedade zoom | If the browser does not support zoom property */
+    @supports not (zoom: 1.2) {
+      transform: scale(1.2);
+    }
   }
 
   ${(props) =>
@@ -195,6 +216,10 @@ export const Logo = styled.img`
         top: 3vw !important;
 
         zoom: 2.5;
+        @supports not (zoom: 2.5) {
+          top: 7.5vw !important;
+          transform: scale(2.5);
+        }
       }
     `};
 `;
