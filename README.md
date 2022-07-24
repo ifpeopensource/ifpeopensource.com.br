@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a target="blank" href="https://www.ifpeopensource.com.br/" rel = "noopener" >
+  <a target="blank" href="https://www.ifpeopensource.com.br/" rel="noopener">
     <img alt="Website do IFPE Open Source" title="Acesse o site" src="./projectImage.jpg" width="50%" />
   </a>
 </h1>
