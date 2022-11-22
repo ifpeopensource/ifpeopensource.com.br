@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import Image from 'next/image';
 
-export const Container = styled.a`
+export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

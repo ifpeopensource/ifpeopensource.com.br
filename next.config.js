@@ -2,7 +2,6 @@ const withImages = require('next-images');
 const { withSentryConfig } = require('@sentry/nextjs');
 
 const moduleExports = {
-  esModule: true,
   reactStrictMode: true,
   eslint: {
     dirs: ['src'],
@@ -14,6 +13,9 @@ const moduleExports = {
       'assets.hackclub.com',
     ],
   },
+  sentry: {
+    hideSourceMaps: false,
+  }
 };
 
 const sentryWebpackPluginOptions = {

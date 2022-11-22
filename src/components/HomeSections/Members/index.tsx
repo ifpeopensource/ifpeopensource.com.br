@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Section from '../Section';
 import { Title, Description } from '../../../styles/sections';
 import { MemberList, CreateCardButton } from './styles';
@@ -27,9 +26,7 @@ const Members: React.FC<MembersProps> = ({ members }) => (
         <UserCard key={member.ghUsername} user={member} />
       ))}
     </MemberList>
-    <Link href="/member" passHref>
-      <CreateCardButton>Criar meu card</CreateCardButton>
-    </Link>
+    <CreateCardButton href="/member">Criar meu card</CreateCardButton>
   </Section>
 );
 

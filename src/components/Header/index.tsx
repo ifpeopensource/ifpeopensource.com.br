@@ -52,29 +52,26 @@ const Header: React.FC<HeaderProps> = ({ setTheme, isHomePage }) => {
       className={pageTop ? 'pageTop' : ''}
     >
       <Content className={pageTop ? 'pageTop' : ''}>
-        <Link href="/" passHref>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a style={isHomePage && { pointerEvents: 'none' }}>
-            {actualTheme === darkTheme ? (
-              <Logo
-                src="/assets/images/logo-light.svg"
-                key={actualTheme.body}
-                alt="IFPE Open Source"
-                width={139}
-                height={47}
-                className={pageTop ? 'pageTop' : ''}
-              />
-            ) : (
-              <Logo
-                src="/assets/images/logo-dark.svg"
-                key={actualTheme.body}
-                alt="IFPE Open Source"
-                width={139}
-                height={47}
-                className={pageTop ? 'pageTop' : ''}
-              />
-            )}
-          </a>
+        <Link href="/" style={isHomePage && { pointerEvents: 'none' }}>
+          {actualTheme === darkTheme ? (
+            <Logo
+              src="/assets/images/logo-light.svg"
+              key={actualTheme.body}
+              alt="IFPE Open Source"
+              width={139}
+              height={47}
+              className={pageTop ? 'pageTop' : ''}
+            />
+          ) : (
+            <Logo
+              src="/assets/images/logo-dark.svg"
+              key={actualTheme.body}
+              alt="IFPE Open Source"
+              width={139}
+              height={47}
+              className={pageTop ? 'pageTop' : ''}
+            />
+          )}
         </Link>
         <ThemeToggler
           defaultChecked

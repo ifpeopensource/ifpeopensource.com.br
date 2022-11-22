@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   background: ${({ theme }) => theme.primary};
   color: #f5f5f5;
   text-decoration: none;

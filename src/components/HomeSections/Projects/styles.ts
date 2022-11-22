@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const ProjectList = styled.div`
   margin-top: 24px;
@@ -13,7 +14,7 @@ export const ProjectList = styled.div`
   }
 `;
 
-export const ShowMoreButton = styled.a`
+export const ShowMoreButton = styled(Link)`
   color: ${({ theme }) => theme.primary};
   background: transparent;
   text-decoration: none;

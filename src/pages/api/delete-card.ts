@@ -1,10 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
+import { Session } from 'next-auth';
 import { query as q } from 'faunadb';
 
-import { withSentry } from '@sentry/nextjs';
-
 import { fauna } from '../../services/fauna';
+
+interface GitHubSession extends Session {
+  ghId: number;
+}
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'DELETE') {
@@ -12,7 +15,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const session = await getSession({ req });
+  const session = await (getSession({ req }) as Promise<GitHubSession | null>);
   if (!session) {
     res.status(401).end("You're not logged in");
   }
@@ -32,4 +35,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(204).end();
 }
 
-export default withSentry(handler);
+export default handler;

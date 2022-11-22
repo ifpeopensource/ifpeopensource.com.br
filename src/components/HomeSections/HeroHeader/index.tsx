@@ -1,5 +1,4 @@
 /* eslint-disable indent */
-import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -17,9 +16,9 @@ const HeroHeader: React.FC = () => {
           Pernambuco
         </Text>
 
-        <Link href="https://github.com/ifpeopensource/" passHref>
-          <Button>Veja no GitHub</Button>
-        </Link>
+        <Button href="https://github.com/ifpeopensource/">
+          Veja no GitHub
+        </Button>
       </Content>
     </Container>
   );

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Section from '../Section';
 import { Title, Description } from '../../../styles/sections';
 import { ProjectList, ShowMoreButton } from './styles';
@@ -38,9 +37,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
         />
       ))}
     </ProjectList>
-    <Link href="https://github.com/ifpeopensource" passHref>
-      <ShowMoreButton>Ver mais</ShowMoreButton>
-    </Link>
+    <ShowMoreButton href="https://github.com/ifpeopensource">
+      Ver mais
+    </ShowMoreButton>
   </Section>
 );
 

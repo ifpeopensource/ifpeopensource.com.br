@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import { darkTheme } from '../../../styles/theme';
 
 export const Container = styled.div`
@@ -62,7 +64,7 @@ export const Text = styled.h1`
   }
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   color: #f5f5f5;
   text-decoration: none;
   font-size: 1.3rem;

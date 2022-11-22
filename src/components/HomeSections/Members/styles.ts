@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const MemberList = styled.div`
   margin-top: 24px;
@@ -14,7 +15,7 @@ export const MemberList = styled.div`
   }
 `;
 
-export const CreateCardButton = styled.a`
+export const CreateCardButton = styled(Link)`
   color: #f5f5f5;
   background: ${({ theme }) => theme.primary};
   text-decoration: none;

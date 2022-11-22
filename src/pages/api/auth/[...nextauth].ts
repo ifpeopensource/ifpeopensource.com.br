@@ -3,8 +3,6 @@ import GitHubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 import axios from 'axios';
 
-import { withSentry } from '@sentry/nextjs';
-
 import ghApi from '../../../services/api';
 import { fauna } from '../../../services/fauna';
 import getTeamsByUserLogin from '../../../util/getTeamsByUserLogin';
@@ -16,6 +14,8 @@ interface FaunaMember {
 
 interface GitHubProfile extends Profile {
   organizations_url: string;
+  id: number;
+  login: string;
 }
 
 interface GithubUserEmail {
@@ -122,4 +122,4 @@ const handler = NextAuth({
   },
 });
 
-export default withSentry(handler);
+export default handler;

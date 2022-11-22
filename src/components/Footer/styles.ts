@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export const Container = styled.div`
   width: 100vw !important;
@@ -66,7 +67,7 @@ export const PolicyContainer = styled.div`
   }
 `;
 
-export const ImageButton = styled.a`
+export const ImageButton = styled(Link)`
   width: 56px;
   height: 56px;
   display: block;
