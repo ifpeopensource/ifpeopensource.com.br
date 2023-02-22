@@ -1,9 +1,12 @@
 import { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
-import Script from 'next/script';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getCookieConsentValue } from 'react-cookie-consent';
 import { ThemeProvider } from 'styled-components';
+
+import CookieConsent from '../components/CookieConsent';
+import GTag from '../components/GTag';
 
 import GlobalStyle from '../styles/global';
 import { darkTheme } from '../styles/theme';
@@ -15,6 +18,14 @@ const MyApp: React.FC<AppProps> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const [theme, setTheme] = useState(darkTheme);
+  const [isAnalyticsGranted, setIsAnalyticsGranted] = useState(false);
+
+  useEffect(() => {
+    const isConsent = getCookieConsentValue();
+    if (isConsent === 'true') {
+      setIsAnalyticsGranted(true);
+    }
+  }, []);
 
   return (
     <SessionProvider session={session}>
@@ -36,20 +47,16 @@ const MyApp: React.FC<AppProps> = ({
         <Component {...pageProps} setTheme={setTheme} />
         <GlobalStyle />
 
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-G8P48ED1PV"
-          strategy="afterInteractive"
+        <CookieConsent
+          onAccept={() => {
+            setIsAnalyticsGranted(true);
+          }}
+          onDecline={() => {
+            setIsAnalyticsGranted(false);
+          }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
 
-              gtag('config', 'G-G8P48ED1PV');
-            `}
-        </Script>
+        {isAnalyticsGranted && <GTag />}
       </ThemeProvider>
     </SessionProvider>
   );

@@ -63,6 +63,7 @@
         "tsx": "never"
       }
     ],
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "@typescript-eslint/no-empty-function": { "allow": "arrow-functions" }
   }
 }

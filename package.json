@@ -20,6 +20,7 @@
     "next-auth": "^4.17.0",
     "next-images": "^1.7.0",
     "react": "18.2.0",
+    "react-cookie-consent": "^8.0.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-modal": "^3.16.1",
