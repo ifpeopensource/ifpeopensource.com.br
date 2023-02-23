@@ -3,20 +3,13 @@
     "title": "Website do IFPE Open Source",
     "projectURL": "https://github.com/ifpeopensource/ifpeopensource.com.br",
     "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/ifpeopensource.com.br/main/projectImage.jpg",
-    "techs": [
-      "Next.js",
-      "TypeScript"
-    ]
+    "techs": ["Next.js", "TypeScript"]
   },
   {
     "title": "Alvinator",
     "projectURL": "https://github.com/ifpeopensource/alvinator",
     "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/alvinator/master/docs/media/projectImage.jpg",
-    "techs": [
-      "JavaScript",
-      "CSS",
-      "HTML"
-    ]
+    "techs": ["JavaScript", "CSS", "HTML"]
   },
   {
     "title": "Competições de Programação",
@@ -28,53 +21,36 @@
     "title": "StockID",
     "projectURL": "https://github.com/ifpeopensource/StockID",
     "imageURL": "https://raw.githubusercontent.com/ifpe-open-source/StockID/master/docs/media/projectImage.jpg",
-    "techs": [
-      "Arduino",
-      "C++",
-      "HTML"
-    ]
+    "techs": ["Arduino", "C++", "HTML"]
   },
   {
     "title": "Pong",
     "projectURL": "https://github.com/ifpeopensource/pong",
     "imageURL": "https://raw.githubusercontent.com/ifpeopensource/pong/554b6104cba27ac6ed160ed16212ff2364782d70/Images/imagem_2021-10-14_130450.png",
-    "techs": [
-      "Godot"
-    ]
+    "techs": ["Godot"]
   },
   {
     "title": "IF Notifier",
     "projectURL": "https://github.com/ifpeopensource/if-notifier",
     "imageURL": "https://raw.githubusercontent.com/ifpeopensource/if-notifier/19d1ec7b5730175aa49ff174c104a1d9d3686be5/projectImage.png",
-    "techs": [
-      "Python"
-    ]
+    "techs": ["Python"]
   },
   {
     "title": "Site da Mostra de Extensão do IFPE",
     "projectURL": "https://github.com/ifpeopensource/mostra-extensao",
     "imageURL": "https://raw.githubusercontent.com/ifpeopensource/mostra-extensao/95f160c1bc6812091d78e58f95be86981752eebb/projectImage.png",
-    "techs": [
-      "JavaScript",
-      "CSS",
-      "HTML"
-    ]
+    "techs": ["JavaScript", "CSS", "HTML"]
   },
   {
     "title": "Certificate Generator",
     "projectURL": "https://github.com/ifpeopensource/certificate-generator",
     "imageURL": "https://raw.githubusercontent.com/ifpeopensource/certificate-generator/01bafd68df2ea28086355836b10973a0e02e8495/projectImage.png",
-    "techs": [
-      "Python",
-      "LibreOffice"
-    ]
+    "techs": ["Python", "LibreOffice"]
   },
   {
     "title": "Bot do Discord IFPE Open Source",
     "projectURL": "https://github.com/ifpeopensource/bot-discord",
     "imageURL": "https://raw.githubusercontent.com/ifpeopensource/bot-discord/da17734f436cdd58474ba4eb1fd2384cb3e81a22/projectImage.png",
-    "techs": [
-      "TypeScript"
-    ]
+    "techs": ["TypeScript"]
   }
 ]
