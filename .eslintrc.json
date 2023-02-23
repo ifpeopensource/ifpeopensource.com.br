@@ -64,6 +64,9 @@
       }
     ],
     "no-plusplus": "off",
-    "@typescript-eslint/no-empty-function": { "allow": "arrow-functions" }
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      { "allow": ["arrowFunctions"] }
+    ]
   }
 }
