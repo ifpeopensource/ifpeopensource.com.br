@@ -8,7 +8,8 @@ export const Container = styled.div<ContainerProps>`
   width: 100vw !important;
   max-width: 100%;
 
-  background: ${(props) => (props.$accent ? props.theme.sectionAccent : 'none')};
+  background: ${(props) =>
+    props.$accent ? props.theme.sectionAccent : 'none'};
 `;
 
 export const Content = styled.div`
