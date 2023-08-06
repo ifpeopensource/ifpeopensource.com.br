@@ -6,7 +6,7 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ children, accent }) => (
-  <Container accent={accent}>
+  <Container $accent={accent}>
     <Content>{children}</Content>
   </Container>
 );
