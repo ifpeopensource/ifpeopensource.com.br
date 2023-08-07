@@ -27,7 +27,7 @@
     "react-modal": "^3.16.1",
     "react-spinners": "^0.13.6",
     "react-toggle": "^4.1.2",
-    "styled-components": "^6.0.7"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.0.4",
